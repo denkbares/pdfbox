@@ -21,19 +21,19 @@
 
 package org.apache.pdfbox.preflight.font;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_ENCODING;
-
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.encoding.Encoding;
-import org.apache.pdfbox.encoding.MacRomanEncoding;
-import org.apache.pdfbox.encoding.WinAnsiEncoding;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.encoding.Encoding;
+import org.apache.lapfdtextpdfbox.encoding.MacRomanEncoding;
+import org.apache.lapfdtextpdfbox.encoding.WinAnsiEncoding;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFontDescriptor;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.font.container.TrueTypeContainer;
 import org.apache.pdfbox.preflight.font.descriptor.TrueTypeDescriptorHelper;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_ENCODING;
 
 public class TrueTypeFontValidator extends SimpleFontValidator<TrueTypeContainer>
 {
@@ -43,13 +43,13 @@ public class TrueTypeFontValidator extends SimpleFontValidator<TrueTypeContainer
         super(context, font, new TrueTypeContainer(font));
     }
 
-    protected void createFontDescriptorHelper()
-    {
+	@Override
+	protected void createFontDescriptorHelper() {
         this.descriptorHelper = new TrueTypeDescriptorHelper(context, font, fontContainer);
     }
 
-    protected void checkEncoding()
-    {
+	@Override
+	protected void checkEncoding() {
         PDFontDescriptor fd = this.font.getFontDescriptor();
         if (fd != null)
         {

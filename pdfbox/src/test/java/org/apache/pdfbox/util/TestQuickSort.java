@@ -19,7 +19,9 @@ package org.apache.pdfbox.util;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.util.QuickSort;
 
 /**
  *

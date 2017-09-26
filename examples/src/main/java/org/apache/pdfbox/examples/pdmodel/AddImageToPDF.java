@@ -20,20 +20,18 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
 
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.io.RandomAccessFile;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDCcitt;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDJpeg;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDPixelMap;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObjectImage;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.io.RandomAccessFile;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDCcitt;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDJpeg;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDPixelMap;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectImage;
 
 
 /**

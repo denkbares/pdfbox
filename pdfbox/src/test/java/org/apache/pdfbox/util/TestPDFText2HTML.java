@@ -20,13 +20,14 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
-
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDType1Font;
+import org.apache.lapfdtextpdfbox.util.PDFText2HTML;
+import org.apache.lapfdtextpdfbox.util.PDFTextStripper;
 
 public class TestPDFText2HTML extends TestCase {
 

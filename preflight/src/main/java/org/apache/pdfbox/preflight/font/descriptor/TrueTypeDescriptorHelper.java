@@ -21,24 +21,22 @@
 
 package org.apache.pdfbox.preflight.font.descriptor;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_ENCODING;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_FONT_FILEX_INVALID;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_TRUETYPE_DAMAGED;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.fontbox.ttf.TTFParser;
 import org.apache.fontbox.ttf.TrueTypeFont;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.pdmodel.common.PDStream;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDFontDescriptorDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDStream;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFontDescriptorDictionary;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.font.container.TrueTypeContainer;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 public class TrueTypeDescriptorHelper extends FontDescriptorHelper<TrueTypeContainer>
 {
@@ -48,8 +46,8 @@ public class TrueTypeDescriptorHelper extends FontDescriptorHelper<TrueTypeConta
         super(context, font, fontContainer);
     }
 
-    public PDStream extractFontFile(PDFontDescriptorDictionary fontDescriptor)
-    {
+	@Override
+	public PDStream extractFontFile(PDFontDescriptorDictionary fontDescriptor) {
         PDStream fontFile = fontDescriptor.getFontFile2();
         COSStream stream = (fontFile == null ? null : fontFile.getStream());
         if (stream == null)
@@ -70,8 +68,8 @@ public class TrueTypeDescriptorHelper extends FontDescriptorHelper<TrueTypeConta
         return fontFile;
     }
 
-    protected void processFontFile(PDFontDescriptorDictionary fontDescriptor, PDStream fontFile)
-    {
+	@Override
+	protected void processFontFile(PDFontDescriptorDictionary fontDescriptor, PDStream fontFile) {
         /*
          * Try to load the font using the TTFParser object. If the font is invalid, an exception will be thrown. Because
          * of it is a Embedded Font Program, some tables are required and other are optional see PDF Reference (§5.8)
@@ -90,8 +88,8 @@ public class TrueTypeDescriptorHelper extends FontDescriptorHelper<TrueTypeConta
             }
             else
             {
-                ((TrueTypeContainer) this.fContainer).setTrueTypeFont(ttf);
-                // TODO check the WIdth consistency too
+				this.fContainer.setTrueTypeFont(ttf);
+				// TODO check the WIdth consistency too
             }
         }
         catch (IOException e)

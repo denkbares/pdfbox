@@ -21,27 +21,26 @@
 
 package org.apache.pdfbox.preflight.utils;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.fail;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.cos.COSFloat;
-import org.apache.pdfbox.cos.COSInteger;
-import org.apache.pdfbox.cos.COSObject;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.cos.COSString;
-import org.apache.pdfbox.io.RandomAccess;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.persistence.util.COSObjectKey;
-import org.apache.pdfbox.preflight.utils.COSUtils;
+import org.apache.lapfdtextpdfbox.cos.COSArray;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSFloat;
+import org.apache.lapfdtextpdfbox.cos.COSInteger;
+import org.apache.lapfdtextpdfbox.cos.COSObject;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.cos.COSString;
+import org.apache.lapfdtextpdfbox.io.RandomAccess;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.persistence.util.COSObjectKey;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
 
 public class TestCOSUtils
 {

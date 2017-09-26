@@ -21,16 +21,7 @@
 
 package org.apache.pdfbox.preflight.font.descriptor;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_CHARSET_MISSING_FOR_SUBSET;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_CID_DAMAGED;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_FONT_FILEX_INVALID;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_TYPE1_DAMAGED;
-import static org.apache.pdfbox.preflight.PreflightConstants.FONT_DICTIONARY_KEY_LENGTH2;
-import static org.apache.pdfbox.preflight.PreflightConstants.FONT_DICTIONARY_KEY_LENGTH3;
-import static org.apache.pdfbox.preflight.font.FontValidator.isSubSet;
-
-import java.awt.Font;
-import java.awt.FontFormatException;
+import java.awt.*;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
@@ -38,18 +29,21 @@ import java.util.List;
 import org.apache.commons.io.IOUtils;
 import org.apache.fontbox.cff.CFFFont;
 import org.apache.fontbox.cff.CFFParser;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.pdmodel.common.PDStream;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDFontDescriptorDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDStream;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFontDescriptorDictionary;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.ValidationException;
 import org.apache.pdfbox.preflight.font.container.Type1Container;
 import org.apache.pdfbox.preflight.font.util.Type1;
 import org.apache.pdfbox.preflight.font.util.Type1Parser;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
+import static org.apache.pdfbox.preflight.font.FontValidator.isSubSet;
 
 public class Type1DescriptorHelper extends FontDescriptorHelper<Type1Container>
 {
@@ -60,8 +54,8 @@ public class Type1DescriptorHelper extends FontDescriptorHelper<Type1Container>
         super(context, font, fontContainer);
     }
 
-    protected boolean checkMandatoryFields(COSDictionary fDescriptor)
-    {
+	@Override
+	protected boolean checkMandatoryFields(COSDictionary fDescriptor) {
         boolean result = super.checkMandatoryFields(fDescriptor);
         /*
          * if the this font is a Subset, the CharSet entry must be present in the FontDescriptor

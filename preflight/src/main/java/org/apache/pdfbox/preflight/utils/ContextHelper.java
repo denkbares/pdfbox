@@ -21,15 +21,16 @@
 
 package org.apache.pdfbox.preflight.utils;
 
-import org.apache.pdfbox.pdmodel.PDResources;
+import org.apache.lapfdtextpdfbox.pdmodel.PDResources;
 import org.apache.pdfbox.preflight.PreflightConfiguration;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_PDF_PROCESSING;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_PDF_PROCESSING_MISSING;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.PreflightPath;
+import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.ValidationException;
 import org.apache.pdfbox.preflight.process.ValidationProcess;
-import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_PDF_PROCESSING;
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_PDF_PROCESSING_MISSING;
 
 public class ContextHelper
 {

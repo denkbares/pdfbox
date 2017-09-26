@@ -21,24 +21,21 @@
 
 package org.apache.pdfbox.preflight.font;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_CIDKEYED_CIDTOGID;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_CIDKEYED_SYSINFO;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_DICTIONARY_INVALID;
-import static org.apache.pdfbox.preflight.PreflightConstants.FONT_DICTIONARY_VALUE_CMAP_IDENTITY;
-
 import java.io.IOException;
 
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.font.container.FontContainer;
 import org.apache.pdfbox.preflight.font.util.CIDToGIDMap;
 import org.apache.pdfbox.preflight.utils.COSUtils;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 public abstract class DescendantFontValidator<T extends FontContainer> extends SimpleFontValidator<T>
 {

@@ -24,8 +24,8 @@ package org.apache.pdfbox.preflight;
 import java.io.IOException;
 import java.util.Collection;
 
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.ValidationException;
 import org.apache.pdfbox.preflight.utils.ContextHelper;
@@ -49,8 +49,8 @@ public class PreflightDocument extends PDDocument
      */
     public PreflightDocument(Format format) throws IOException
     {
-        this(format, (PreflightConfiguration) null);
-    }
+		this(format, null);
+	}
 
     /**
      * Create a preflight document based on the COSDocument and load the default configuration for the given format.

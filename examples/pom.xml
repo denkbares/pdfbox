@@ -21,7 +21,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache.pdfbox</groupId>
+	  <groupId>org.apache.lapdfpdfbox</groupId>
     <artifactId>pdfbox-parent</artifactId>
     <version>1.8.14-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>
@@ -39,12 +39,12 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.pdfbox</groupId>
+		<groupId>org.apache.lapdfpdfbox</groupId>
       <artifactId>pdfbox</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.pdfbox</groupId>
+		<groupId>org.apache.lapdfpdfbox</groupId>
       <artifactId>xmpbox</artifactId>
       <version>${project.version}</version>
     </dependency>

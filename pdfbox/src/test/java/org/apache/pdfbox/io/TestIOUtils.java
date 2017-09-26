@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.io.IOUtils;
 
 /**
  * This is a unit test for {@link IOUtils}.

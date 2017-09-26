@@ -21,11 +21,11 @@
 
 package org.apache.pdfbox.preflight.action.pdfa1b;
 
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.pdmodel.common.filespecification.PDFileSpecification;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionRemoteGoTo;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.pdmodel.common.filespecification.PDFileSpecification;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.action.type.PDActionRemoteGoTo;
 import org.apache.pdfbox.preflight.PreflightConstants;
 import org.junit.Test;
 

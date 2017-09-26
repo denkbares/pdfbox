@@ -19,7 +19,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache.pdfbox</groupId>
+    <groupId>org.apache.lapdfpdfbox</groupId>
     <artifactId>pdfbox-parent</artifactId>
     <version>1.8.14-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>

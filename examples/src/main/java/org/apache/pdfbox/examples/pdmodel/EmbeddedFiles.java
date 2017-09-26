@@ -23,19 +23,16 @@ import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import org.apache.pdfbox.exceptions.COSVisitorException;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentNameDictionary;
-import org.apache.pdfbox.pdmodel.PDEmbeddedFilesNameTreeNode;
-import org.apache.pdfbox.pdmodel.PDPage;
-
-import org.apache.pdfbox.pdmodel.common.filespecification.PDComplexFileSpecification;
-import org.apache.pdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentNameDictionary;
+import org.apache.lapfdtextpdfbox.pdmodel.PDEmbeddedFilesNameTreeNode;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.common.filespecification.PDComplexFileSpecification;
+import org.apache.lapfdtextpdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDType1Font;
 
 
 /**

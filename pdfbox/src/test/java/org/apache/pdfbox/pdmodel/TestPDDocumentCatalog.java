@@ -19,9 +19,10 @@ package org.apache.pdfbox.pdmodel;
 import java.io.InputStream;
 import java.util.List;
 
-import org.apache.pdfbox.pdmodel.graphics.color.PDOutputIntent;
-
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDOutputIntent;
 
 public class TestPDDocumentCatalog extends TestCase {
 

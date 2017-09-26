@@ -21,31 +21,20 @@
 
 package org.apache.pdfbox.preflight.process.reflect;
 
-import static org.apache.pdfbox.preflight.PreflightConfiguration.ACTIONS_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConfiguration.ANNOTATIONS_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConfiguration.GRAPHIC_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConfiguration.RESOURCES_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_INVALID;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_TRANSPARENCY_GROUP;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_UNKOWN_ERROR;
-import static org.apache.pdfbox.preflight.PreflightConstants.PAGE_DICTIONARY_VALUE_THUMB;
-import static org.apache.pdfbox.preflight.PreflightConstants.XOBJECT_DICTIONARY_KEY_GROUP;
-import static org.apache.pdfbox.preflight.PreflightConstants.XOBJECT_DICTIONARY_VALUE_S_TRANSPARENCY;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSObject;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObject;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObjectImage;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSObject;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.PDResources;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDColorSpace;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObject;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectImage;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.annotation.PDAnnotation;
 import org.apache.pdfbox.preflight.PreflightConfiguration;
 import org.apache.pdfbox.preflight.PreflightConstants;
 import org.apache.pdfbox.preflight.PreflightContext;
@@ -59,6 +48,9 @@ import org.apache.pdfbox.preflight.graphic.ColorSpaceHelperFactory.ColorSpaceRes
 import org.apache.pdfbox.preflight.process.AbstractProcess;
 import org.apache.pdfbox.preflight.utils.COSUtils;
 import org.apache.pdfbox.preflight.utils.ContextHelper;
+
+import static org.apache.pdfbox.preflight.PreflightConfiguration.*;
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 public class SinglePageValidationProcess extends AbstractProcess
 {

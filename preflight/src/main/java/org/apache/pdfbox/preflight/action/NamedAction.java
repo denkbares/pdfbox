@@ -21,17 +21,12 @@
 
 package org.apache.pdfbox.preflight.action;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ACTION_DICTIONARY_VALUE_ATYPE_NAMED_FIRST;
-import static org.apache.pdfbox.preflight.PreflightConstants.ACTION_DICTIONARY_VALUE_ATYPE_NAMED_LAST;
-import static org.apache.pdfbox.preflight.PreflightConstants.ACTION_DICTIONARY_VALUE_ATYPE_NAMED_NEXT;
-import static org.apache.pdfbox.preflight.PreflightConstants.ACTION_DICTIONARY_VALUE_ATYPE_NAMED_PREV;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ACTION_FORBIDDEN_ACTIONS_NAMED;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ACTION_MISING_KEY;
-
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSName;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 /**
  * ActionManager for the Named action. Named action is valid if N entry is present with one of the four values :

@@ -21,16 +21,13 @@
 
 package org.apache.pdfbox.preflight.process.reflect;
 
-import org.apache.pdfbox.cos.COSBase;
-import static org.apache.pdfbox.preflight.PreflightConfiguration.RESOURCES_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_INVALID_PATTERN_DEFINITION;
-
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.graphics.pattern.PDTilingPatternResources;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.PDResources;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.pattern.PDTilingPatternResources;
 import org.apache.pdfbox.preflight.PreflightConstants;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.PreflightPath;
@@ -39,6 +36,9 @@ import org.apache.pdfbox.preflight.content.ContentStreamWrapper;
 import org.apache.pdfbox.preflight.exception.ValidationException;
 import org.apache.pdfbox.preflight.process.AbstractProcess;
 import org.apache.pdfbox.preflight.utils.ContextHelper;
+
+import static org.apache.pdfbox.preflight.PreflightConfiguration.RESOURCES_PROCESS;
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_INVALID_PATTERN_DEFINITION;
 
 public class TilingPatternValidationProcess extends AbstractProcess
 {

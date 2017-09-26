@@ -24,10 +24,15 @@ import java.util.Arrays;
 import java.util.Random;
 
 import junit.framework.TestCase;
-
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
-
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.filter.CCITTFaxDecodeFilter;
+import org.apache.lapfdtextpdfbox.filter.DCTFilter;
+import org.apache.lapfdtextpdfbox.filter.Filter;
+import org.apache.lapfdtextpdfbox.filter.FilterManager;
+import org.apache.lapfdtextpdfbox.filter.JBIG2Filter;
+import org.apache.lapfdtextpdfbox.filter.JPXFilter;
+import org.apache.lapfdtextpdfbox.filter.LZWFilter;
+import org.apache.lapfdtextpdfbox.filter.RunLengthDecodeFilter;
 
 /**
  * This will test all of the filters in the PDFBox system.
@@ -92,15 +97,13 @@ public class TestFilters extends TestCase
                 }
         
                 FilterManager manager = new FilterManager();
-                for( Filter filter : manager.getFilters() ) 
-                {
+				for (Filter filter : manager.getFilters()) {
                     // Skip filters that don't currently support roundtripping
                     if( filter instanceof DCTFilter ||
                         filter instanceof CCITTFaxDecodeFilter ||
                         filter instanceof JPXFilter ||
                         filter instanceof JBIG2Filter ||
-                        filter instanceof RunLengthDecodeFilter )
-                        {
+							filter instanceof RunLengthDecodeFilter) {
                             continue;
                         }
 

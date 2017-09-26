@@ -21,13 +21,13 @@
 
 package org.apache.pdfbox.preflight.action;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ACTION_MISING_KEY;
-
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSName;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ACTION_MISING_KEY;
 
 /**
  * ActionManager for the Submit action SubmitAction is valid if the F entry is present.

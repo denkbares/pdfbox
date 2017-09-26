@@ -16,24 +16,25 @@
  */
 package org.apache.pdfbox.pdmodel.graphics.optionalcontent;
 
-import java.awt.Color;
+import java.awt.*;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Set;
 
 import junit.framework.TestCase;
-
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
-import org.apache.pdfbox.pdmodel.graphics.optionalcontent.PDOptionalContentProperties.BaseState;
-import org.apache.pdfbox.pdmodel.markedcontent.PDPropertyList;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.PDResources;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDType1Font;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.optionalcontent.PDOptionalContentGroup;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.optionalcontent.PDOptionalContentProperties;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.optionalcontent.PDOptionalContentProperties.BaseState;
+import org.apache.lapfdtextpdfbox.pdmodel.markedcontent.PDPropertyList;
 
 /**
  * Tests optional content group functionality (also called layers).
@@ -43,7 +44,7 @@ import org.apache.pdfbox.pdmodel.markedcontent.PDPropertyList;
 public class TestOptionalContentGroups extends TestCase
 {
 
-    private File testResultsDir = new File("target/test-output");
+	private final File testResultsDir = new File("target/test-output");
 
     /** {@inheritDoc} */
     @Override

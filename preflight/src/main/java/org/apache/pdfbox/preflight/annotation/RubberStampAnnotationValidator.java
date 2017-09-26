@@ -21,13 +21,13 @@
 
 package org.apache.pdfbox.preflight.annotation;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ANNOT_MISSING_FIELDS;
-
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationRubberStamp;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.annotation.PDAnnotationRubberStamp;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ANNOT_MISSING_FIELDS;
 
 /**
  * Validation class for the BudderStampAnnotation
@@ -51,8 +51,8 @@ public class RubberStampAnnotationValidator extends AnnotationValidator
      * 
      * @seenet.awl.edoc.pdfa.validation.annotation.AnnotationValidator# checkMandatoryFields(java.util.List)
      */
-    protected boolean checkMandatoryFields()
-    {
+	@Override
+	protected boolean checkMandatoryFields() {
         boolean subtype = this.annotDictionary.containsKey(COSName.SUBTYPE);
         boolean rect = this.annotDictionary.containsKey(COSName.RECT);
         boolean f = this.annotDictionary.containsKey(COSName.F);

@@ -21,23 +21,18 @@
 
 package org.apache.pdfbox.preflight.font;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_ENCODING;
-import static org.apache.pdfbox.preflight.PreflightConstants.FONT_DICTIONARY_VALUE_ENCODING_MAC;
-import static org.apache.pdfbox.preflight.PreflightConstants.FONT_DICTIONARY_VALUE_ENCODING_MAC_EXP;
-import static org.apache.pdfbox.preflight.PreflightConstants.FONT_DICTIONARY_VALUE_ENCODING_PDFDOC;
-import static org.apache.pdfbox.preflight.PreflightConstants.FONT_DICTIONARY_VALUE_ENCODING_STD;
-import static org.apache.pdfbox.preflight.PreflightConstants.FONT_DICTIONARY_VALUE_ENCODING_WIN;
-
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.font.container.Type1Container;
 import org.apache.pdfbox.preflight.font.descriptor.Type1DescriptorHelper;
 import org.apache.pdfbox.preflight.utils.COSUtils;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 public class Type1FontValidator extends SimpleFontValidator<Type1Container>
 {
@@ -53,8 +48,8 @@ public class Type1FontValidator extends SimpleFontValidator<Type1Container>
         this.descriptorHelper = new Type1DescriptorHelper(context, font, fontContainer);
     }
 
-    protected void checkEncoding()
-    {
+	@Override
+	protected void checkEncoding() {
         COSBase encoding = ((COSDictionary) font.getCOSObject()).getItem(COSName.ENCODING);
         if (encoding != null)
         {

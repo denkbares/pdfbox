@@ -24,13 +24,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.util.Locale;
-
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.io.IOUtils;
-import org.apache.pdfbox.io.RandomAccessBuffer;
 
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.io.IOUtils;
+import org.apache.lapfdtextpdfbox.io.RandomAccessBuffer;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
 
 /**
  * Testcase introduced with PDFBOX-1581.
@@ -38,7 +38,7 @@ import junit.framework.TestCase;
  */
 public class TestPDDocument extends TestCase
 {
-    private File testResultsDir = new File("target/test-output");
+	private final File testResultsDir = new File("target/test-output");
 
     @Override
     protected void setUp() throws Exception
@@ -222,8 +222,8 @@ public class TestPDDocument extends TestCase
      * Test whether a good file can be deleted after load() and close() succeed.
      * 
      * @throws java.io.FileNotFoundException
-     * @throws org.apache.pdfbox.exceptions.COSVisitorException
-     */
+	 * @throws COSVisitorException
+	 */
     public void testDeleteGoodFileTest() throws IOException, COSVisitorException
     {
         File f = new File("test.pdf");

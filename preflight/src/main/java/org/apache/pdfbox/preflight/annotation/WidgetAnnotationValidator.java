@@ -21,15 +21,15 @@
 
 package org.apache.pdfbox.preflight.annotation;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ANNOT_FORBIDDEN_AA;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ANNOT_MISSING_FIELDS;
-
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationWidget;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.annotation.PDAnnotationWidget;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.ValidationException;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ANNOT_FORBIDDEN_AA;
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ANNOT_MISSING_FIELDS;
 
 /**
  * Validation class for the Widget Annotation
@@ -82,8 +82,8 @@ public class WidgetAnnotationValidator extends AnnotationValidator
      * 
      * @seenet.awl.edoc.pdfa.validation.annotation.AnnotationValidator# checkMandatoryFields()
      */
-    protected boolean checkMandatoryFields()
-    {
+	@Override
+	protected boolean checkMandatoryFields() {
         boolean subtype = this.annotDictionary.containsKey(COSName.SUBTYPE);
         boolean rect = this.annotDictionary.containsKey(COSName.RECT);
         boolean f = this.annotDictionary.containsKey(COSName.F);

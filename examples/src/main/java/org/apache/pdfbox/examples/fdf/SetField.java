@@ -18,16 +18,13 @@ package org.apache.pdfbox.examples.fdf;
 
 import java.io.IOException;
 
-import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
-import org.apache.pdfbox.pdmodel.interactive.form.PDField;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
-
-import org.apache.pdfbox.exceptions.COSVisitorException;
-
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.exceptions.CryptographyException;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.form.PDAcroForm;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.form.PDField;
 import org.apache.pdfbox.examples.AbstractExample;
-import org.apache.pdfbox.exceptions.CryptographyException;
 
 /**
  * This example will take a PDF document and set a FDF field in it.

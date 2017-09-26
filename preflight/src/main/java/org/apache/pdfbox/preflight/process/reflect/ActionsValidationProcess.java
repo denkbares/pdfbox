@@ -23,17 +23,17 @@ package org.apache.pdfbox.preflight.process.reflect;
 
 import java.util.List;
 
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.preflight.PreflightConfiguration;
 import org.apache.pdfbox.preflight.PreflightConstants;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.PreflightPath;
+import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.action.AbstractActionManager;
 import org.apache.pdfbox.preflight.action.ActionManagerFactory;
 import org.apache.pdfbox.preflight.exception.ValidationException;
 import org.apache.pdfbox.preflight.process.AbstractProcess;
-import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 
 public class ActionsValidationProcess extends AbstractProcess
 {

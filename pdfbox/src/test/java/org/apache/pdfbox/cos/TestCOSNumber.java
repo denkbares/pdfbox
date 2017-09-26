@@ -19,6 +19,10 @@ package org.apache.pdfbox.cos;
 
 import java.io.IOException;
 
+import org.apache.lapfdtextpdfbox.cos.COSFloat;
+import org.apache.lapfdtextpdfbox.cos.COSInteger;
+import org.apache.lapfdtextpdfbox.cos.COSNumber;
+
 /**
  * Test class for {@link COSNumber}
  */

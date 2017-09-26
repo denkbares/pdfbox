@@ -27,30 +27,29 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 import javax.crypto.Cipher;
 
 import junit.framework.TestCase;
-import static junit.framework.TestCase.fail;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.exceptions.CryptographyException;
-import org.apache.pdfbox.io.IOUtils;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
-import org.apache.pdfbox.pdmodel.PDDocumentNameDictionary;
-import org.apache.pdfbox.pdmodel.PDEmbeddedFilesNameTreeNode;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.common.COSObjectable;
-import org.apache.pdfbox.pdmodel.common.filespecification.PDComplexFileSpecification;
-import org.apache.pdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
-import org.apache.pdfbox.pdmodel.encryption.AccessPermission;
-import org.apache.pdfbox.pdmodel.encryption.BadSecurityHandlerException;
-import org.apache.pdfbox.pdmodel.encryption.DecryptionMaterial;
-import org.apache.pdfbox.pdmodel.encryption.StandardDecryptionMaterial;
-import org.apache.pdfbox.pdmodel.encryption.StandardProtectionPolicy;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.exceptions.CryptographyException;
+import org.apache.lapfdtextpdfbox.io.IOUtils;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentNameDictionary;
+import org.apache.lapfdtextpdfbox.pdmodel.PDEmbeddedFilesNameTreeNode;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.common.COSObjectable;
+import org.apache.lapfdtextpdfbox.pdmodel.common.filespecification.PDComplexFileSpecification;
+import org.apache.lapfdtextpdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
+import org.apache.lapfdtextpdfbox.pdmodel.encryption.AccessPermission;
+import org.apache.lapfdtextpdfbox.pdmodel.encryption.BadSecurityHandlerException;
+import org.apache.lapfdtextpdfbox.pdmodel.encryption.DecryptionMaterial;
+import org.apache.lapfdtextpdfbox.pdmodel.encryption.StandardDecryptionMaterial;
+import org.apache.lapfdtextpdfbox.pdmodel.encryption.StandardProtectionPolicy;
 import org.apache.pdfbox.pdmodel.graphics.xobject.PDUtils;
 import org.junit.Assert;
 

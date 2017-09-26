@@ -21,29 +21,21 @@
 
 package org.apache.pdfbox.preflight.process.reflect;
 
-import static org.apache.pdfbox.preflight.PreflightConfiguration.EXTGSTATE_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConfiguration.FONT_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConfiguration.GRAPHIC_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConfiguration.SHADDING_PATTERN_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConfiguration.TILING_PATTERN_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_INVALID_PATTERN_DEFINITION;
-import static org.apache.pdfbox.preflight.PreflightConstants.TRANPARENCY_DICTIONARY_KEY_EXTGSTATE;
-
 import java.io.IOException;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.graphics.pattern.PDPatternResources;
-import org.apache.pdfbox.pdmodel.graphics.pattern.PDTilingPatternResources;
-import org.apache.pdfbox.pdmodel.graphics.shading.PDShadingResources;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObject;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.pdmodel.PDResources;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.pattern.PDPatternResources;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.pattern.PDTilingPatternResources;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.shading.PDShadingResources;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObject;
 import org.apache.pdfbox.preflight.PreflightConstants;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.PreflightPath;
@@ -52,6 +44,10 @@ import org.apache.pdfbox.preflight.exception.ValidationException;
 import org.apache.pdfbox.preflight.process.AbstractProcess;
 import org.apache.pdfbox.preflight.utils.COSUtils;
 import org.apache.pdfbox.preflight.utils.ContextHelper;
+
+import static org.apache.pdfbox.preflight.PreflightConfiguration.*;
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_INVALID_PATTERN_DEFINITION;
+import static org.apache.pdfbox.preflight.PreflightConstants.TRANPARENCY_DICTIONARY_KEY_EXTGSTATE;
 
 public class ResourcesValidationProcess extends AbstractProcess
 {

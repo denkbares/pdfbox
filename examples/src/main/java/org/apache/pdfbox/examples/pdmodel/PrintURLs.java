@@ -19,15 +19,14 @@ package org.apache.pdfbox.examples.pdmodel;
 import java.awt.geom.Rectangle2D;
 import java.util.List;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-
-import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDAction;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionURI;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
-import org.apache.pdfbox.util.PDFTextStripperByArea;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDRectangle;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.action.type.PDAction;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.action.type.PDActionURI;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.annotation.PDAnnotation;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
+import org.apache.lapfdtextpdfbox.util.PDFTextStripperByArea;
 
 
 /**

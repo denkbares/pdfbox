@@ -16,10 +16,13 @@
 package org.apache.pdfbox.pdmodel.graphics.color;
 
 import java.io.IOException;
+
 import junit.framework.TestCase;
-import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.pdmodel.common.PDRange;
+import org.apache.lapfdtextpdfbox.cos.COSArray;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDRange;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDLab;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDTristimulus;
 
 /**
  *

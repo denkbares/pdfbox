@@ -23,17 +23,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.pdfbox.io.IOUtils;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.common.PDStream;
-import org.apache.pdfbox.pdmodel.font.PDCIDFontType2Font;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDFontDescriptorDictionary;
-import org.apache.pdfbox.pdmodel.font.PDTrueTypeFont;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObject;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObjectForm;
+import org.apache.lapfdtextpdfbox.io.IOUtils;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.PDResources;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDStream;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDCIDFontType2Font;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFontDescriptorDictionary;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDTrueTypeFont;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObject;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectForm;
 
 /**
  * This will extract all treu type-fonts of a pdf.

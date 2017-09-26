@@ -16,26 +16,24 @@
  */
 package org.apache.pdfbox.examples.util;
 
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSStream;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.graphics.PDGraphicsState;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObject;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObjectForm;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObjectImage;
-import org.apache.pdfbox.util.Matrix;
-import org.apache.pdfbox.util.PDFOperator;
-import org.apache.pdfbox.util.PDFStreamEngine;
-import org.apache.pdfbox.util.ResourceLoader;
-
 import java.awt.geom.AffineTransform;
 import java.io.IOException;
-
 import java.util.List;
 import java.util.Map;
+
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.PDResources;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.PDGraphicsState;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObject;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectForm;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectImage;
+import org.apache.lapfdtextpdfbox.util.Matrix;
+import org.apache.lapfdtextpdfbox.util.PDFOperator;
+import org.apache.lapfdtextpdfbox.util.PDFStreamEngine;
+import org.apache.lapfdtextpdfbox.util.ResourceLoader;
 
 /**
  * This is an example on how to get the x/y coordinates of image locations.
@@ -110,15 +108,15 @@ public class PrintImageLocations extends PDFStreamEngine
      *
      * @throws IOException If there is an error processing the operation.
      */
-    protected void processOperator( PDFOperator operator, List arguments ) throws IOException
-    {
+	@Override
+	protected void processOperator(PDFOperator operator, List arguments) throws IOException {
         String operation = operator.getOperation();
         if( INVOKE_OPERATOR.equals(operation) )
         {
             COSName objectName = (COSName)arguments.get( 0 );
             Map<String, PDXObject> xobjects = getResources().getXObjects();
-            PDXObject xobject = (PDXObject)xobjects.get( objectName.getName() );
-            if( xobject instanceof PDXObjectImage )
+			PDXObject xobject = xobjects.get(objectName.getName());
+			if( xobject instanceof PDXObjectImage )
             {
                 PDXObjectImage image = (PDXObjectImage)xobject;
                 PDPage page = getCurrentPage();
@@ -184,8 +182,8 @@ public class PrintImageLocations extends PDFStreamEngine
                 processSubStream( page, pdResources, invoke );
                 
                 // restore the graphics state
-                setGraphicsState( (PDGraphicsState)getGraphicsStack().pop() );
-            }
+				setGraphicsState(getGraphicsStack().pop());
+			}
             
         }
         else

@@ -16,15 +16,13 @@
  */
 package org.apache.pdfbox.examples.pdmodel;
 
-import java.awt.Color;
+import java.awt.*;
 import java.io.IOException;
 
-import org.apache.pdfbox.exceptions.COSVisitorException;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
 
 /**
  * This is an example that creates a simple document.

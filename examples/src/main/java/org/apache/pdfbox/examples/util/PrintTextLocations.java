@@ -16,15 +16,14 @@
  */
 package org.apache.pdfbox.examples.util;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.common.PDStream;
-import org.apache.pdfbox.util.PDFTextStripper;
-import org.apache.pdfbox.util.TextPosition;
-
 import java.io.IOException;
-
 import java.util.List;
+
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDStream;
+import org.apache.lapfdtextpdfbox.util.PDFTextStripper;
+import org.apache.lapfdtextpdfbox.util.TextPosition;
 
 /**
  * This is an example on how to get some x/y coordinates of text.
@@ -98,8 +97,8 @@ public class PrintTextLocations extends PDFTextStripper
      *
      * @param text The text to be processed
      */
-    protected void processTextPosition( TextPosition text )
-    {
+	@Override
+	protected void processTextPosition(TextPosition text) {
         System.out.println( "String[" + text.getXDirAdj() + "," +
                 text.getYDirAdj() + " fs=" + text.getFontSize() + " xscale=" +
                 text.getXScale() + " height=" + text.getHeightDir() + " space=" +

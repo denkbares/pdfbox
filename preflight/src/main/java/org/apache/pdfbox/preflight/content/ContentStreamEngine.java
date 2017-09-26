@@ -21,14 +21,6 @@
 
 package org.apache.pdfbox.preflight.content;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_INVALID_COLOR_SPACE_CMYK;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_INVALID_COLOR_SPACE_MISSING;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_INVALID_COLOR_SPACE_RGB;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_INVALID_UNKNOWN_COLOR_SPACE;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_TOO_MANY_GRAPHIC_STATES;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_GRAPHIC_UNEXPECTED_VALUE_FOR_KEY;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_GRAPHIC_STATES;
-
 import java.awt.color.ColorSpace;
 import java.awt.color.ICC_ColorSpace;
 import java.io.IOException;
@@ -36,19 +28,51 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSString;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.graphics.color.PDCalGray;
-import org.apache.pdfbox.pdmodel.graphics.color.PDCalRGB;
-import org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace;
-import org.apache.pdfbox.pdmodel.graphics.color.PDColorSpaceFactory;
-import org.apache.pdfbox.pdmodel.graphics.color.PDColorState;
-import org.apache.pdfbox.pdmodel.graphics.color.PDICCBased;
-import org.apache.pdfbox.pdmodel.graphics.color.PDLab;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSString;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDCalGray;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDCalRGB;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDColorSpace;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDColorSpaceFactory;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDColorState;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDICCBased;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDLab;
+import org.apache.lapfdtextpdfbox.util.PDFOperator;
+import org.apache.lapfdtextpdfbox.util.PDFStreamEngine;
+import org.apache.lapfdtextpdfbox.util.operator.BeginText;
+import org.apache.lapfdtextpdfbox.util.operator.Concatenate;
+import org.apache.lapfdtextpdfbox.util.operator.EndText;
+import org.apache.lapfdtextpdfbox.util.operator.GRestore;
+import org.apache.lapfdtextpdfbox.util.operator.GSave;
+import org.apache.lapfdtextpdfbox.util.operator.Invoke;
+import org.apache.lapfdtextpdfbox.util.operator.MoveText;
+import org.apache.lapfdtextpdfbox.util.operator.MoveTextSetLeading;
+import org.apache.lapfdtextpdfbox.util.operator.NextLine;
+import org.apache.lapfdtextpdfbox.util.operator.OperatorProcessor;
+import org.apache.lapfdtextpdfbox.util.operator.SetCharSpacing;
+import org.apache.lapfdtextpdfbox.util.operator.SetHorizontalTextScaling;
+import org.apache.lapfdtextpdfbox.util.operator.SetLineCapStyle;
+import org.apache.lapfdtextpdfbox.util.operator.SetLineDashPattern;
+import org.apache.lapfdtextpdfbox.util.operator.SetLineJoinStyle;
+import org.apache.lapfdtextpdfbox.util.operator.SetLineWidth;
+import org.apache.lapfdtextpdfbox.util.operator.SetMatrix;
+import org.apache.lapfdtextpdfbox.util.operator.SetNonStrokingCMYKColor;
+import org.apache.lapfdtextpdfbox.util.operator.SetNonStrokingColor;
+import org.apache.lapfdtextpdfbox.util.operator.SetNonStrokingColorSpace;
+import org.apache.lapfdtextpdfbox.util.operator.SetNonStrokingRGBColor;
+import org.apache.lapfdtextpdfbox.util.operator.SetStrokingCMYKColor;
+import org.apache.lapfdtextpdfbox.util.operator.SetStrokingColor;
+import org.apache.lapfdtextpdfbox.util.operator.SetStrokingColorSpace;
+import org.apache.lapfdtextpdfbox.util.operator.SetStrokingRGBColor;
+import org.apache.lapfdtextpdfbox.util.operator.SetTextFont;
+import org.apache.lapfdtextpdfbox.util.operator.SetTextLeading;
+import org.apache.lapfdtextpdfbox.util.operator.SetTextRenderingMode;
+import org.apache.lapfdtextpdfbox.util.operator.SetTextRise;
+import org.apache.lapfdtextpdfbox.util.operator.SetWordSpacing;
 import org.apache.pdfbox.preflight.PreflightConfiguration;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
@@ -61,38 +85,8 @@ import org.apache.pdfbox.preflight.graphic.ICCProfileWrapper;
 import org.apache.pdfbox.preflight.utils.COSUtils;
 import org.apache.pdfbox.preflight.utils.FilterHelper;
 import org.apache.pdfbox.preflight.utils.RenderingIntents;
-import org.apache.pdfbox.util.PDFOperator;
-import org.apache.pdfbox.util.PDFStreamEngine;
-import org.apache.pdfbox.util.operator.BeginText;
-import org.apache.pdfbox.util.operator.Concatenate;
-import org.apache.pdfbox.util.operator.EndText;
-import org.apache.pdfbox.util.operator.GRestore;
-import org.apache.pdfbox.util.operator.GSave;
-import org.apache.pdfbox.util.operator.Invoke;
-import org.apache.pdfbox.util.operator.MoveText;
-import org.apache.pdfbox.util.operator.MoveTextSetLeading;
-import org.apache.pdfbox.util.operator.NextLine;
-import org.apache.pdfbox.util.operator.OperatorProcessor;
-import org.apache.pdfbox.util.operator.SetCharSpacing;
-import org.apache.pdfbox.util.operator.SetHorizontalTextScaling;
-import org.apache.pdfbox.util.operator.SetLineCapStyle;
-import org.apache.pdfbox.util.operator.SetLineDashPattern;
-import org.apache.pdfbox.util.operator.SetLineJoinStyle;
-import org.apache.pdfbox.util.operator.SetLineWidth;
-import org.apache.pdfbox.util.operator.SetMatrix;
-import org.apache.pdfbox.util.operator.SetNonStrokingCMYKColor;
-import org.apache.pdfbox.util.operator.SetNonStrokingColor;
-import org.apache.pdfbox.util.operator.SetNonStrokingColorSpace;
-import org.apache.pdfbox.util.operator.SetNonStrokingRGBColor;
-import org.apache.pdfbox.util.operator.SetStrokingCMYKColor;
-import org.apache.pdfbox.util.operator.SetStrokingColor;
-import org.apache.pdfbox.util.operator.SetStrokingColorSpace;
-import org.apache.pdfbox.util.operator.SetStrokingRGBColor;
-import org.apache.pdfbox.util.operator.SetTextFont;
-import org.apache.pdfbox.util.operator.SetTextLeading;
-import org.apache.pdfbox.util.operator.SetTextRenderingMode;
-import org.apache.pdfbox.util.operator.SetTextRise;
-import org.apache.pdfbox.util.operator.SetWordSpacing;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 /**
  * This class inherits from org.apache.pdfbox.util.PDFStreamEngine to allow the validation of specific rules in
@@ -103,8 +97,8 @@ public abstract class ContentStreamEngine extends PDFStreamEngine
 
     private enum ColorSpaceType
     {
-        RGB, CMYK, ALL;
-    }
+		RGB, CMYK, ALL
+	}
 
     protected PreflightContext context = null;
 
@@ -217,8 +211,8 @@ public abstract class ContentStreamEngine extends PDFStreamEngine
         registerOperatorProcessor("sh", stubOp);
     }
 
-    public final void registerOperatorProcessor(String operator, OperatorProcessor op)
-    {
+	@Override
+	public final void registerOperatorProcessor(String operator, OperatorProcessor op) {
         super.registerOperatorProcessor(operator, op);
         contentStreamEngineOperators.put(operator, op);
     }
@@ -530,8 +524,8 @@ public abstract class ContentStreamEngine extends PDFStreamEngine
         }
         else if (arguments.get(0) instanceof COSString)
         {
-            colorSpaceName = ((COSString) arguments.get(0)).toString();
-        }
+			colorSpaceName = arguments.get(0).toString();
+		}
         else if (arguments.get(0) instanceof COSName)
         {
             colorSpaceName = ((COSName) arguments.get(0)).getName();

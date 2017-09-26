@@ -20,13 +20,13 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.pdfbox.exceptions.CryptographyException;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
-import org.apache.pdfbox.pdmodel.common.COSObjectable;
-import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
-import org.apache.pdfbox.pdmodel.interactive.form.PDField;
-import org.apache.pdfbox.pdmodel.interactive.form.PDSignatureField;
+import org.apache.lapfdtextpdfbox.exceptions.CryptographyException;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.lapfdtextpdfbox.pdmodel.common.COSObjectable;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.form.PDAcroForm;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.form.PDField;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.form.PDSignatureField;
 
 /**
  * This example will take a PDF document and print all the fields from the file.
@@ -51,7 +51,7 @@ public class PrintFields
         List fields = acroForm.getFields();
         Iterator fieldsIter = fields.iterator();
 
-        System.out.println(new Integer(fields.size()).toString() + " top-level fields were found on the form");
+		System.out.println(new Integer(fields.size()) + " top-level fields were found on the form");
 
         while (fieldsIter.hasNext())
         {

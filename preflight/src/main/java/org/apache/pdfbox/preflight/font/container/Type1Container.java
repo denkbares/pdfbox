@@ -26,7 +26,7 @@ import java.util.List;
 
 import org.apache.fontbox.cff.CFFFont;
 import org.apache.fontbox.cff.CFFFont.Mapping;
-import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.preflight.font.util.GlyphException;
 import org.apache.pdfbox.preflight.font.util.Type1;
 
@@ -36,7 +36,7 @@ public class Type1Container extends FontContainer
      * Represent the missingWidth value of the FontDescriptor dictionary. According to the PDF Reference, if this value
      * is missing, the default one is 0.
      */
-    private float defaultGlyphWidth = 0;
+	private final float defaultGlyphWidth = 0;
 
     /**
      * true if information come from the FontFile1 Stream, false if they come from the FontFile3

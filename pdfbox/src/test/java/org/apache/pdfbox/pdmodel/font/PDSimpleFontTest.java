@@ -19,8 +19,9 @@ package org.apache.pdfbox.pdmodel.font;
 
 import java.awt.image.BufferedImage;
 import java.util.List;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
+
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

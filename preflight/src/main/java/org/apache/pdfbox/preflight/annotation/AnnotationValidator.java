@@ -21,29 +21,23 @@
 
 package org.apache.pdfbox.preflight.annotation;
 
-import static org.apache.pdfbox.preflight.PreflightConfiguration.ACTIONS_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConfiguration.GRAPHIC_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConstants.ANNOT_DICTIONARY_VALUE_SUBTYPE_POPUP;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ANNOT_FORBIDDEN_COLOR;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ANNOT_FORBIDDEN_FLAG;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ANNOT_INVALID_AP_CONTENT;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ANNOT_INVALID_CA;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ANNOT_MISSING_AP_N_CONTENT;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_DICT_INVALID;
-
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObjectForm;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectForm;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.annotation.PDAnnotation;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.annotation.PDAppearanceDictionary;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.ValidationException;
 import org.apache.pdfbox.preflight.graphic.ICCProfileWrapper;
 import org.apache.pdfbox.preflight.utils.COSUtils;
 import org.apache.pdfbox.preflight.utils.ContextHelper;
+
+import static org.apache.pdfbox.preflight.PreflightConfiguration.ACTIONS_PROCESS;
+import static org.apache.pdfbox.preflight.PreflightConfiguration.GRAPHIC_PROCESS;
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 public abstract class AnnotationValidator
 {

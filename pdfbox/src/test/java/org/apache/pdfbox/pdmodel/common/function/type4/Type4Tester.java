@@ -16,6 +16,10 @@
  */
 package org.apache.pdfbox.pdmodel.common.function.type4;
 
+import org.apache.lapfdtextpdfbox.pdmodel.common.function.type4.ExecutionContext;
+import org.apache.lapfdtextpdfbox.pdmodel.common.function.type4.InstructionSequence;
+import org.apache.lapfdtextpdfbox.pdmodel.common.function.type4.InstructionSequenceBuilder;
+import org.apache.lapfdtextpdfbox.pdmodel.common.function.type4.Operators;
 import org.junit.Assert;
 
 /**

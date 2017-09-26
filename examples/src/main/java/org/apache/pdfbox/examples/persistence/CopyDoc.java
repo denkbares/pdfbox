@@ -18,14 +18,10 @@ package org.apache.pdfbox.examples.persistence;
 
 import java.io.IOException;
 
-import org.apache.pdfbox.cos.COSDocument;
-
-
-
-import org.apache.pdfbox.pdfparser.PDFParser;
-
-import org.apache.pdfbox.pdfwriter.COSWriter;
-import org.apache.pdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.pdfparser.PDFParser;
+import org.apache.lapfdtextpdfbox.pdfwriter.COSWriter;
 
 /**
  * This is an example used to copy a documents contents from a source doc to destination doc

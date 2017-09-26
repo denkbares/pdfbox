@@ -21,15 +21,15 @@
 
 package org.apache.pdfbox.preflight.font;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_DICTIONARY_INVALID;
-
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.ValidationException;
 import org.apache.pdfbox.preflight.font.container.FontContainer;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_DICTIONARY_INVALID;
 
 public abstract class SimpleFontValidator<T extends FontContainer> extends FontValidator<T>
 {
@@ -47,8 +47,8 @@ public abstract class SimpleFontValidator<T extends FontContainer> extends FontV
      * 
      * @return
      */
-    public void validate() throws ValidationException
-    {
+	@Override
+	public void validate() throws ValidationException {
         checkMandatoryField();
 
         createFontDescriptorHelper();

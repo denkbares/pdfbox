@@ -16,16 +16,14 @@
  */
 package org.apache.pdfbox.examples.pdmodel;
 
-
-import org.apache.pdfbox.pdfparser.PDFParser;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDDocumentOutline;
-import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem;
-import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode;
-
 import java.io.FileInputStream;
 import java.io.IOException;
+
+import org.apache.lapfdtextpdfbox.pdfparser.PDFParser;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.documentnavigation.outline.PDDocumentOutline;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode;
 
 /**
  * This is an example on how to access the bookmarks that are part of a pdf document.

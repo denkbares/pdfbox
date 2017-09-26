@@ -21,26 +21,6 @@
 
 package org.apache.pdfbox.preflight.parser;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_ARRAY_TOO_LONG;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_CROSS_REF;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_HEXA_STRING_EVEN_NUMBER;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_HEXA_STRING_INVALID;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_HEXA_STRING_TOO_LONG;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_INVALID_OFFSET;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_MISSING_OFFSET;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_NAME_TOO_LONG;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_NUMERIC_RANGE;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_OBJ_DELIMITER;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_STREAM_DELIMITER;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_TOO_MANY_ENTRIES;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_TRAILER_EOF;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_ARRAY_ELEMENTS;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_DICT_ENTRIES;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_NAME_SIZE;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_NEGATIVE_FLOAT;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_POSITIVE_FLOAT;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_STRING_LENGTH;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -51,33 +31,32 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
 
-import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.cos.COSFloat;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSNull;
-import org.apache.pdfbox.cos.COSNumber;
-import org.apache.pdfbox.cos.COSObject;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.cos.COSString;
-import org.apache.pdfbox.exceptions.CryptographyException;
-import org.apache.pdfbox.io.IOUtils;
-import org.apache.pdfbox.io.RandomAccess;
-import org.apache.pdfbox.pdfparser.BaseParser;
-import org.apache.pdfbox.pdfparser.NonSequentialPDFParser;
-import org.apache.pdfbox.pdfparser.PDFObjectStreamParser;
-import org.apache.pdfbox.pdfparser.PDFParser;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.persistence.util.COSObjectKey;
+import org.apache.lapfdtextpdfbox.cos.COSArray;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSFloat;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSNull;
+import org.apache.lapfdtextpdfbox.cos.COSNumber;
+import org.apache.lapfdtextpdfbox.cos.COSObject;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.cos.COSString;
+import org.apache.lapfdtextpdfbox.exceptions.CryptographyException;
+import org.apache.lapfdtextpdfbox.io.IOUtils;
+import org.apache.lapfdtextpdfbox.io.RandomAccess;
+import org.apache.lapfdtextpdfbox.pdfparser.BaseParser;
+import org.apache.lapfdtextpdfbox.pdfparser.NonSequentialPDFParser;
+import org.apache.lapfdtextpdfbox.pdfparser.PDFObjectStreamParser;
+import org.apache.lapfdtextpdfbox.pdfparser.PDFParser;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.persistence.util.COSObjectKey;
 import org.apache.pdfbox.preflight.Format;
 import org.apache.pdfbox.preflight.PreflightConfiguration;
 import org.apache.pdfbox.preflight.PreflightConstants;
@@ -86,6 +65,8 @@ import org.apache.pdfbox.preflight.PreflightDocument;
 import org.apache.pdfbox.preflight.ValidationResult;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.SyntaxValidationException;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 public class PreflightParser extends NonSequentialPDFParser
 {

@@ -16,12 +16,14 @@
  */
 package org.apache.pdfbox.pdmodel.graphics.color;
 
-import java.awt.Color;
+import java.awt.*;
 import java.awt.color.ColorSpace;
 import java.awt.image.ColorModel;
 import java.io.IOException;
 
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDColorSpace;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDColorState;
 
 /**
  * Test cases for the {@link PDColorState} class.
@@ -53,20 +55,24 @@ public class PDColorStateTest extends TestCase
      */
     private static class UnsupportedColorSpace extends PDColorSpace {
 
-        public int getNumberOfComponents() throws IOException {
-            return 1;
+		@Override
+		public int getNumberOfComponents() throws IOException {
+			return 1;
         }
 
-        public String getName() {
-            return "unsupported color space";
+		@Override
+		public String getName() {
+			return "unsupported color space";
         }
 
-        protected ColorSpace createColorSpace() throws IOException {
-            throw new IOException("unsupported color space");
+		@Override
+		protected ColorSpace createColorSpace() throws IOException {
+			throw new IOException("unsupported color space");
         }
 
-        public ColorModel createColorModel(int bpc) throws IOException {
-            throw new IOException("unsupported color space");
+		@Override
+		public ColorModel createColorModel(int bpc) throws IOException {
+			throw new IOException("unsupported color space");
         }
 
     }

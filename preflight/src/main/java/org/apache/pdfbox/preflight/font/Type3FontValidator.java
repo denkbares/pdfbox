@@ -21,29 +21,23 @@
 
 package org.apache.pdfbox.preflight.font;
 
-import static org.apache.pdfbox.preflight.PreflightConfiguration.RESOURCES_PROCESS;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_DICTIONARY_INVALID;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_ENCODING;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_METRICS;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_TYPE3_DAMAGED;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.encoding.DictionaryEncoding;
-import org.apache.pdfbox.encoding.Encoding;
-import org.apache.pdfbox.encoding.EncodingManager;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDFontFactory;
+import org.apache.lapfdtextpdfbox.cos.COSArray;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.encoding.DictionaryEncoding;
+import org.apache.lapfdtextpdfbox.encoding.Encoding;
+import org.apache.lapfdtextpdfbox.encoding.EncodingManager;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.PDResources;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFontFactory;
 import org.apache.pdfbox.preflight.PreflightConstants;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.PreflightPath;
@@ -56,6 +50,9 @@ import org.apache.pdfbox.preflight.font.util.GlyphException;
 import org.apache.pdfbox.preflight.font.util.PDFAType3StreamParser;
 import org.apache.pdfbox.preflight.utils.COSUtils;
 import org.apache.pdfbox.preflight.utils.ContextHelper;
+
+import static org.apache.pdfbox.preflight.PreflightConfiguration.RESOURCES_PROCESS;
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 public class Type3FontValidator extends FontValidator<Type3Container>
 {
@@ -70,8 +67,8 @@ public class Type3FontValidator extends FontValidator<Type3Container>
         this.fontDictionary = (COSDictionary) font.getCOSObject();
     }
 
-    public void validate() throws ValidationException
-    {
+	@Override
+	public void validate() throws ValidationException {
         checkMandatoryField();
         checkFontBBox();
         checkFontMatrix();
@@ -340,8 +337,8 @@ public class Type3FontValidator extends FontValidator<Type3Container>
                 {
                     // TODO spaces/isartor-6-2-3-3-t02-fail-h.pdf --> si ajout de l'erreur dans le container le test
                     // echoue... pourquoi si la font est utilisée ca devrait planter???
-                    this.context.addValidationError(new ValidationError(((ContentStreamException) e).getErrorCode(), e
-                            .getMessage()));
+					this.context.addValidationError(new ValidationError(e.getErrorCode(), e
+							.getMessage()));
                     return;
                 }
                 catch (IOException e)

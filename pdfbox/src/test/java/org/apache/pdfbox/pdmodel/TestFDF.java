@@ -25,17 +25,17 @@ import java.util.Map;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.cos.COSString;
-import org.apache.pdfbox.pdfparser.PDFStreamParser;
-import org.apache.pdfbox.pdmodel.fdf.FDFDocument;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceStream;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationWidget;
-import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
-import org.apache.pdfbox.pdmodel.interactive.form.PDField;
-import org.apache.pdfbox.pdmodel.interactive.form.PDRadioCollection;
-import org.apache.pdfbox.pdmodel.interactive.form.PDTextbox;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.cos.COSString;
+import org.apache.lapfdtextpdfbox.pdfparser.PDFStreamParser;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.fdf.FDFDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.annotation.PDAnnotationWidget;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.annotation.PDAppearanceStream;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.form.PDAcroForm;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.form.PDField;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.form.PDRadioCollection;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.form.PDTextbox;
 
 /**
  * This will test the FDF algorithms in PDFBox.

@@ -23,9 +23,9 @@ package org.apache.pdfbox.preflight.utils;
 
 import java.io.IOException;
 
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.pdfparser.BaseParser;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.pdfparser.BaseParser;
 
 /**
  * This class is a tool to parse a byte array as a COS object (COSDIctionary)

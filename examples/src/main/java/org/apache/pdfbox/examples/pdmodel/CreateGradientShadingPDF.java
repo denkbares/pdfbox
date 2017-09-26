@@ -18,20 +18,21 @@ package org.apache.pdfbox.examples.pdmodel;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSFloat;
-import org.apache.pdfbox.cos.COSInteger;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.common.function.PDFunctionType2;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
-import org.apache.pdfbox.pdmodel.graphics.shading.PDShadingResources;
-import org.apache.pdfbox.pdmodel.graphics.shading.PDShadingType2;
+
+import org.apache.lapfdtextpdfbox.cos.COSArray;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSFloat;
+import org.apache.lapfdtextpdfbox.cos.COSInteger;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.PDResources;
+import org.apache.lapfdtextpdfbox.pdmodel.common.function.PDFunctionType2;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDDeviceRGB;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.shading.PDShadingResources;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.shading.PDShadingType2;
 
 /**
  * This example creates a PDF with type 2 (axial) shading with a type 2
@@ -94,8 +95,8 @@ public class CreateGradientShadingPDF
             // create and add to shading resources
             page.setResources(new PDResources());
             Map<String, PDShadingResources> shadings = new HashMap<String, PDShadingResources>();
-            shadings.put("sh1", (PDShadingResources) shading);
-            page.getResources().setShadings(shadings);
+			shadings.put("sh1", shading);
+			page.getResources().setShadings(shadings);
 
             // invoke shading from content stream
             PDPageContentStream contentStream = new PDPageContentStream(document, page, true, false);

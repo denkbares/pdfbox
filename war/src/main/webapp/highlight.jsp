@@ -14,9 +14,9 @@
  ! See the License for the specific language governing permissions and
  ! limitations under the License.
  --%>
-<%@ page import="org.apache.pdfbox.pdmodel.PDDocument"%>
-<%@ page import="org.apache.pdfbox.util.PDFHighlighter"%>
 <%@ page import="java.net.URL"%>
+<%@ page import="org.apache.lapfdtextpdfbox.pdmodel.PDDocument" %>
+<%@ page import="org.apache.lapfdtextpdfbox.util.PDFHighlighter" %>
 
 <%
     long start = System.currentTimeMillis();

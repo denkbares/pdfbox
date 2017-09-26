@@ -23,15 +23,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Map;
+
 import junit.framework.TestCase;
-import org.apache.pdfbox.io.IOUtils;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
-import org.apache.pdfbox.pdmodel.PDDocumentNameDictionary;
-import org.apache.pdfbox.pdmodel.PDEmbeddedFilesNameTreeNode;
-import org.apache.pdfbox.pdmodel.common.COSObjectable;
-import org.apache.pdfbox.pdmodel.common.filespecification.PDComplexFileSpecification;
-import org.apache.pdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
+import org.apache.lapfdtextpdfbox.io.IOUtils;
+import org.apache.lapfdtextpdfbox.pdfparser.EndstreamOutputStream;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentNameDictionary;
+import org.apache.lapfdtextpdfbox.pdmodel.PDEmbeddedFilesNameTreeNode;
+import org.apache.lapfdtextpdfbox.pdmodel.common.COSObjectable;
+import org.apache.lapfdtextpdfbox.pdmodel.common.filespecification.PDComplexFileSpecification;
+import org.apache.lapfdtextpdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
 import org.junit.Assert;
 
 /**

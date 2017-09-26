@@ -17,6 +17,7 @@
 package org.apache.pdfbox.pdmodel.common.function.type4;
 
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.pdmodel.common.function.type4.InstructionSequenceBuilder;
 
 /**
  * Tests the type 4 function parser.

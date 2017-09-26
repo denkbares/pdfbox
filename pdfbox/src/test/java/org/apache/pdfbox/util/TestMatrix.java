@@ -21,6 +21,7 @@ import java.io.IOException;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.apache.lapfdtextpdfbox.util.Matrix;
 
 /**
  * Test the {@link Matrix} class.

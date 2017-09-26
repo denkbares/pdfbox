@@ -20,6 +20,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.ExtractText;
 
 /**
  * Test suite for ExtractText. 
@@ -39,8 +40,8 @@ public class TestExtractText extends TestCase
         System.setOut(new PrintStream(outBytes));
         try 
         {
-            ExtractText.main(new String[] {"src/test/resources/org/apache/pdfbox/testPDFPackage.pdf", 
-                    "-console", "-encoding UTF-8"});
+			ExtractText.main(new String[] { "src/test/resources/org/apache/pdfbox/testPDFPackage.pdf",
+					"-console", "-encoding UTF-8"});
         } 
         finally 
         {

@@ -16,18 +16,18 @@
  */
 package org.apache.pdfbox.examples.pdmodel;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
-import org.apache.pdfbox.pdmodel.PDDocumentInformation;
-import org.apache.pdfbox.pdmodel.common.PDMetadata;
+import java.io.ByteArrayOutputStream;
+import java.util.GregorianCalendar;
+
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentInformation;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDMetadata;
 import org.apache.xmpbox.XMPMetadata;
 import org.apache.xmpbox.schema.AdobePDFSchema;
 import org.apache.xmpbox.schema.DublinCoreSchema;
 import org.apache.xmpbox.schema.XMPBasicSchema;
 import org.apache.xmpbox.xml.XmpSerializer;
-
-import java.io.ByteArrayOutputStream;
-import java.util.GregorianCalendar;
 
 /**
  * This is an example on how to add metadata to a document.

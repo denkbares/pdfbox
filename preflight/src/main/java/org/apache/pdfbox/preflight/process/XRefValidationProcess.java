@@ -21,14 +21,14 @@
 
 package org.apache.pdfbox.preflight.process;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_INDIRECT_OBJ_RANGE;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_TRAILER;
-
-import org.apache.pdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
 import org.apache.pdfbox.preflight.PreflightConstants;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.ValidationException;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_INDIRECT_OBJ_RANGE;
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_TRAILER;
 
 public class XRefValidationProcess extends AbstractProcess
 {

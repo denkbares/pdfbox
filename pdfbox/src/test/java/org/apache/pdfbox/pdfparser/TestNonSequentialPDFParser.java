@@ -21,22 +21,23 @@
 
 package org.apache.pdfbox.pdfparser;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FilenameFilter;
 import java.io.IOException;
 
-import org.apache.pdfbox.io.RandomAccessBuffer;
+import org.apache.lapfdtextpdfbox.io.RandomAccessBuffer;
+import org.apache.lapfdtextpdfbox.pdfparser.NonSequentialPDFParser;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class TestNonSequentialPDFParser {
 
     private static final String PATH_OF_PDF = "src/test/resources/input/yaddatest.pdf";
-    private static File tmpDirectory = new File(System.getProperty("java.io.tmpdir"));
+	private static final File tmpDirectory = new File(System.getProperty("java.io.tmpdir"));
 
     private int numberOfTmpFiles = 0;
 

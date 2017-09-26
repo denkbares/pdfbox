@@ -21,15 +21,16 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
-import org.apache.pdfbox.pdmodel.PDDocumentNameDictionary;
-import org.apache.pdfbox.pdmodel.PDEmbeddedFilesNameTreeNode;
-import org.apache.pdfbox.pdmodel.common.filespecification.PDComplexFileSpecification;
-import org.apache.pdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
-import org.junit.Test;
-
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentNameDictionary;
+import org.apache.lapfdtextpdfbox.pdmodel.PDEmbeddedFilesNameTreeNode;
+import org.apache.lapfdtextpdfbox.pdmodel.common.COSObjectable;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDNameTreeNode;
+import org.apache.lapfdtextpdfbox.pdmodel.common.filespecification.PDComplexFileSpecification;
+import org.apache.lapfdtextpdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
+import org.junit.Test;
 
 public class TestEmbeddedFiles extends TestCase
 {

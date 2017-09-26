@@ -21,7 +21,7 @@
 
 package org.apache.pdfbox.preflight.graphic;
 
-import org.apache.pdfbox.pdmodel.graphics.color.PDColorSpace;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDColorSpace;
 import org.apache.pdfbox.preflight.PreflightContext;
 
 /**
@@ -64,6 +64,6 @@ public class ColorSpaceHelperFactory
      */
     public enum ColorSpaceRestriction
     {
-        NO_RESTRICTION, NO_PATTERN, ONLY_DEVICE;
-    }
+		NO_RESTRICTION, NO_PATTERN, ONLY_DEVICE
+	}
 }

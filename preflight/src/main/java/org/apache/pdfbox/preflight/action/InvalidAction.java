@@ -21,11 +21,11 @@
 
 package org.apache.pdfbox.preflight.action;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ACTION_FORBIDDEN_ACTIONS_EXPLICITLY_FORBIDDEN;
-
-import org.apache.pdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_ACTION_FORBIDDEN_ACTIONS_EXPLICITLY_FORBIDDEN;
 
 /**
  * ActionManager for InvalidAction. An invalid action is an action which isn't authorized in a PDF/A file but should be

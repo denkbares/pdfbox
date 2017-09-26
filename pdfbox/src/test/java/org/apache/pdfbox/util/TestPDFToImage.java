@@ -24,10 +24,10 @@ import java.io.IOException;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.util.PDFImageWriter;
 
 /**
  * Test suite for PDFTextStripper.
@@ -82,8 +82,8 @@ public class TestPDFToImage extends TestCase
     /**
      * Test suite setup.
      */
-    public void setUp()
-    {
+	@Override
+	public void setUp() {
         // If you want to test a single file using DEBUG logging, from an IDE,
         // you can do something like this:
         //

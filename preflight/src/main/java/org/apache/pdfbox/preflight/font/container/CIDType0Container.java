@@ -28,7 +28,7 @@ import java.util.List;
 
 import org.apache.fontbox.cff.CFFFont;
 import org.apache.fontbox.cff.CFFFont.Mapping;
-import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
 
 public class CIDType0Container extends FontContainer
 {

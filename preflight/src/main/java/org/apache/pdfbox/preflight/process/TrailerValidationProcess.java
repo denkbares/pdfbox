@@ -21,38 +21,25 @@
 
 package org.apache.pdfbox.preflight.process;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.DICTIONARY_KEY_LINEARIZED;
-import static org.apache.pdfbox.preflight.PreflightConstants.DICTIONARY_KEY_LINEARIZED_E;
-import static org.apache.pdfbox.preflight.PreflightConstants.DICTIONARY_KEY_LINEARIZED_H;
-import static org.apache.pdfbox.preflight.PreflightConstants.DICTIONARY_KEY_LINEARIZED_L;
-import static org.apache.pdfbox.preflight.PreflightConstants.DICTIONARY_KEY_LINEARIZED_N;
-import static org.apache.pdfbox.preflight.PreflightConstants.DICTIONARY_KEY_LINEARIZED_O;
-import static org.apache.pdfbox.preflight.PreflightConstants.DICTIONARY_KEY_LINEARIZED_T;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_TRAILER;
-import static org.apache.pdfbox.preflight.PreflightConstants.TRAILER_DICTIONARY_KEY_ENCRYPT;
-import static org.apache.pdfbox.preflight.PreflightConstants.TRAILER_DICTIONARY_KEY_ID;
-import static org.apache.pdfbox.preflight.PreflightConstants.TRAILER_DICTIONARY_KEY_INFO;
-import static org.apache.pdfbox.preflight.PreflightConstants.TRAILER_DICTIONARY_KEY_PREV;
-import static org.apache.pdfbox.preflight.PreflightConstants.TRAILER_DICTIONARY_KEY_ROOT;
-import static org.apache.pdfbox.preflight.PreflightConstants.TRAILER_DICTIONARY_KEY_SIZE;
-
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSObject;
-import org.apache.pdfbox.cos.COSString;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.persistence.util.COSObjectKey;
+import org.apache.lapfdtextpdfbox.cos.COSArray;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSObject;
+import org.apache.lapfdtextpdfbox.cos.COSString;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.persistence.util.COSObjectKey;
 import org.apache.pdfbox.preflight.PreflightConstants;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.ValidationException;
 import org.apache.pdfbox.preflight.utils.COSUtils;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 public class TrailerValidationProcess extends AbstractProcess
 {

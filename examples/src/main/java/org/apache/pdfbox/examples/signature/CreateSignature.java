@@ -18,7 +18,6 @@ package org.apache.pdfbox.examples.signature;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,13 +37,13 @@ import java.util.Calendar;
 import java.util.Enumeration;
 import java.util.List;
 
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.exceptions.SignatureException;
-import org.apache.pdfbox.io.RandomAccessFile;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.interactive.digitalsignature.PDSignature;
-import org.apache.pdfbox.pdmodel.interactive.digitalsignature.SignatureInterface;
-import org.apache.pdfbox.pdmodel.interactive.digitalsignature.SignatureOptions;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.exceptions.SignatureException;
+import org.apache.lapfdtextpdfbox.io.RandomAccessFile;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.digitalsignature.PDSignature;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.digitalsignature.SignatureInterface;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.digitalsignature.SignatureOptions;
 import org.bouncycastle.cms.CMSException;
 import org.bouncycastle.cms.CMSProcessable;
 import org.bouncycastle.cms.CMSSignedData;
@@ -64,7 +63,7 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 public class CreateSignature implements SignatureInterface
 {
 
-  private static BouncyCastleProvider provider = new BouncyCastleProvider();
+	private static final BouncyCastleProvider provider = new BouncyCastleProvider();
 
   private PrivateKey privKey;
 
@@ -251,8 +250,8 @@ public class CreateSignature implements SignatureInterface
   }
 
   public static void main(String[] args) throws KeyStoreException,
-      NoSuchAlgorithmException, CertificateException, FileNotFoundException,
-      IOException, COSVisitorException, SignatureException
+		  NoSuchAlgorithmException, CertificateException,
+		  IOException, COSVisitorException, SignatureException
   {
     if (args.length != 3)
     {

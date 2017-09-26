@@ -16,10 +16,10 @@
  */
 package org.apache.pdfbox.examples.pdmodel;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionJavaScript;
-
 import java.io.IOException;
+
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.action.type.PDActionJavaScript;
 
 /**
  * This is an example of how to set some javascript in the document.

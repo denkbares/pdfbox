@@ -21,31 +21,20 @@
 
 package org.apache.pdfbox.preflight.content;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_ARRAY_TOO_LONG;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_CONTENT_STREAM_INVALID_ARGUMENT;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_LITERAL_TOO_LONG;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_NAME_TOO_LONG;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_NUMERIC_RANGE;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_TOO_MANY_ENTRIES;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_ARRAY_ELEMENTS;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_DICT_ENTRIES;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_NAME_SIZE;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_NEGATIVE_FLOAT;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_POSITIVE_FLOAT;
-import static org.apache.pdfbox.preflight.PreflightConstants.MAX_STRING_LENGTH;
-
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSFloat;
-import org.apache.pdfbox.cos.COSInteger;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSString;
-import org.apache.pdfbox.util.PDFOperator;
-import org.apache.pdfbox.util.operator.OperatorProcessor;
+import org.apache.lapfdtextpdfbox.cos.COSArray;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSFloat;
+import org.apache.lapfdtextpdfbox.cos.COSInteger;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSString;
+import org.apache.lapfdtextpdfbox.util.PDFOperator;
+import org.apache.lapfdtextpdfbox.util.operator.OperatorProcessor;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 /**
  * This implementation of OperatorProcessor allow the operator validation according PDF/A rules without compute the

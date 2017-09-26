@@ -16,9 +16,9 @@
  */
 package org.apache.pdfbox.pdmodel.common.function.type4;
 
-import org.junit.Assert;
-
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.pdmodel.common.function.type4.ExecutionContext;
+import org.junit.Assert;
 
 /**
  * Tests all implemented PostScript operators.

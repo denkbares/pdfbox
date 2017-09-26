@@ -23,9 +23,9 @@ import java.io.InputStream;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.pdfparser.BaseParser;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
 
 
 /**
@@ -124,8 +124,8 @@ public class TestPDFParser extends TestCase
          * @return The parsed cos name.
          * @throws IOException If there is an error parsing the COSName.
          */
-        public COSName parseCOSName() throws IOException
-        {
+		@Override
+		public COSName parseCOSName() throws IOException {
             return super.parseCOSName();
         }
     }

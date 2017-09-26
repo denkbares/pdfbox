@@ -17,22 +17,22 @@
 package org.apache.pdfbox.examples.pdmodel;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentNameDictionary;
-import org.apache.pdfbox.pdmodel.PDEmbeddedFilesNameTreeNode;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.common.COSObjectable;
-import org.apache.pdfbox.pdmodel.common.PDNameTreeNode;
-import org.apache.pdfbox.pdmodel.common.filespecification.PDComplexFileSpecification;
-import org.apache.pdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
-import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationFileAttachment;
+import org.apache.lapfdtextpdfbox.exceptions.CryptographyException;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentNameDictionary;
+import org.apache.lapfdtextpdfbox.pdmodel.PDEmbeddedFilesNameTreeNode;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.common.COSObjectable;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDNameTreeNode;
+import org.apache.lapfdtextpdfbox.pdmodel.common.filespecification.PDComplexFileSpecification;
+import org.apache.lapfdtextpdfbox.pdmodel.common.filespecification.PDEmbeddedFile;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.annotation.PDAnnotation;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.annotation.PDAnnotationFileAttachment;
 
 /**
  * This is an example on how to extract all embedded files from a PDF document.
@@ -75,8 +75,7 @@ public class ExtractEmbeddedFiles
                     {
                         document.decrypt("");
                     }
-                    catch( org.apache.pdfbox.exceptions.CryptographyException e )
-                    {
+					catch (CryptographyException e) {
                         e.printStackTrace();
                     }
                 }
@@ -139,9 +138,8 @@ public class ExtractEmbeddedFiles
     }
 
     private static void extractFile(String filePath, String filename, PDEmbeddedFile embeddedFile)
-            throws IOException, FileNotFoundException
-    {
-        String embeddedFilename = filePath + filename;
+			throws IOException {
+		String embeddedFilename = filePath + filename;
         File file = new File(filePath + filename);
         System.out.println("Writing " + embeddedFilename);
         FileOutputStream fos = new FileOutputStream(file);

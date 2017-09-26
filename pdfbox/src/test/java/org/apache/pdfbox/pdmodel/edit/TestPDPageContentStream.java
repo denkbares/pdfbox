@@ -16,19 +16,20 @@
  */
 package org.apache.pdfbox.pdmodel.edit;
 
-import junit.framework.TestCase;
-import org.apache.pdfbox.cos.COSFloat;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.pdfparser.PDFStreamParser;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.graphics.color.ColorSpaceCMYK;
-import org.apache.pdfbox.util.PDFOperator;
-
-import java.awt.Color;
+import java.awt.*;
 import java.awt.color.ColorSpace;
 import java.io.IOException;
+
+import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.cos.COSFloat;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.pdfparser.PDFStreamParser;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.ColorSpaceCMYK;
+import org.apache.lapfdtextpdfbox.util.PDFOperator;
 
 /**
  * @author Yegor Kozlov

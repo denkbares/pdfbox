@@ -26,14 +26,13 @@ import java.security.cert.X509Certificate;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
-
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.exceptions.CryptographyException;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.encryption.AccessPermission;
-import org.apache.pdfbox.pdmodel.encryption.PublicKeyDecryptionMaterial;
-import org.apache.pdfbox.pdmodel.encryption.PublicKeyProtectionPolicy;
-import org.apache.pdfbox.pdmodel.encryption.PublicKeyRecipient;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.exceptions.CryptographyException;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.encryption.AccessPermission;
+import org.apache.lapfdtextpdfbox.pdmodel.encryption.PublicKeyDecryptionMaterial;
+import org.apache.lapfdtextpdfbox.pdmodel.encryption.PublicKeyProtectionPolicy;
+import org.apache.lapfdtextpdfbox.pdmodel.encryption.PublicKeyRecipient;
 
 /**
  * Tests for public key encryption.
@@ -62,8 +61,8 @@ public class TestPublicKeyEncryption extends TestCase
     /**
      * {@inheritDoc}
      */
-    protected void setUp() throws Exception 
-    {
+	@Override
+	protected void setUp() throws Exception {
         permission1 = new AccessPermission();
         permission1.setCanAssembleDocument(false);
         permission1.setCanExtractContent(false);
@@ -105,8 +104,8 @@ public class TestPublicKeyEncryption extends TestCase
     /**
      * {@inheritDoc}
      */
-    protected void tearDown() throws Exception 
-    {
+	@Override
+	protected void tearDown() throws Exception {
         document.close();
     }
 

@@ -19,13 +19,13 @@ package org.apache.pdfbox.pdmodel.common.function;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSFloat;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.io.RandomAccessBuffer;
-
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.cos.COSArray;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSFloat;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.io.RandomAccessBuffer;
+import org.apache.lapfdtextpdfbox.pdmodel.common.function.PDFunctionType4;
 
 /**
  * Tests the {@link PDFunctionType4} class.

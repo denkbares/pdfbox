@@ -21,35 +21,32 @@
 
 package org.apache.pdfbox.preflight.content;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_ENCODING_ERROR;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_FONTS_UNKNOWN_FONT_REF;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_CONTENT_STREAM_INVALID_ARGUMENT;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_CONTENT_STREAM_UNSUPPORTED_OP;
-
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSFloat;
-import org.apache.pdfbox.cos.COSInteger;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.cos.COSString;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.common.PDStream;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.graphics.PDGraphicsState;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObjectForm;
-import org.apache.pdfbox.pdmodel.text.PDTextState;
+import org.apache.lapfdtextpdfbox.cos.COSArray;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSFloat;
+import org.apache.lapfdtextpdfbox.cos.COSInteger;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.cos.COSString;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.PDResources;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDStream;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.PDGraphicsState;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectForm;
+import org.apache.lapfdtextpdfbox.pdmodel.text.PDTextState;
+import org.apache.lapfdtextpdfbox.util.PDFOperator;
+import org.apache.lapfdtextpdfbox.util.operator.OperatorProcessor;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.ValidationException;
 import org.apache.pdfbox.preflight.font.container.FontContainer;
 import org.apache.pdfbox.preflight.font.util.GlyphException;
-import org.apache.pdfbox.util.PDFOperator;
-import org.apache.pdfbox.util.operator.OperatorProcessor;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 public class ContentStreamWrapper extends ContentStreamEngine
 {
@@ -150,8 +147,8 @@ public class ContentStreamWrapper extends ContentStreamEngine
      * 
      * @see org.apache.pdfbox.util.PDFStreamEngine#processOperator(org.apache.pdfbox .util.PDFOperator, java.util.List)
      */
-    protected void processOperator(PDFOperator operator, List arguments) throws IOException
-    {
+	@Override
+	protected void processOperator(PDFOperator operator, List arguments) throws IOException {
         /*
          * Here is a copy of the super method because the else block is different. (If the operator is unknown, throw an
          * exception)
@@ -196,9 +193,8 @@ public class ContentStreamWrapper extends ContentStreamEngine
      * @throws ContentStreamException
      * @throws IOException
      */
-    protected void checkShowTextOperators(PDFOperator operator, List<?> arguments) throws ContentStreamException,
-            IOException
-    {
+	protected void checkShowTextOperators(PDFOperator operator, List<?> arguments) throws
+			IOException {
         String op = operator.getOperation();
         if ("Tj".equals(op) || "'".equals(op) || "\"".equals(op))
         {
@@ -222,9 +218,8 @@ public class ContentStreamWrapper extends ContentStreamEngine
      * @throws ContentStreamException
      * @throws IOException
      */
-    private void validStringDefinition(PDFOperator operator, List<?> arguments) throws ContentStreamException,
-            IOException
-    {
+	private void validStringDefinition(PDFOperator operator, List<?> arguments) throws
+			IOException {
         /*
          * For a Text operator, the arguments list should contain only one COSString object
          */
@@ -285,8 +280,7 @@ public class ContentStreamWrapper extends ContentStreamEngine
      * @throws ContentStreamException
      * @throws IOException
      */
-    private void validStringArray(PDFOperator operator, List<?> arguments) throws ContentStreamException, IOException
-    {
+	private void validStringArray(PDFOperator operator, List<?> arguments) throws IOException {
         for (Object object : arguments)
         {
             if (object instanceof COSArray)

@@ -22,6 +22,8 @@ import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.encoding.PDFDocEncodingCharset;
+import org.apache.lapfdtextpdfbox.encoding.SingleByteCharset;
 
 /**
  * This class tests {@link PDFDocEncodingCharset} and indirectly {@link SingleByteCharset}.

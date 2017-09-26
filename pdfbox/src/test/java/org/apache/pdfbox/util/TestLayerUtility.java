@@ -16,27 +16,27 @@
  */
 package org.apache.pdfbox.util;
 
-import java.awt.Color;
+import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.io.File;
 import java.io.IOException;
 
 import junit.framework.TestCase;
-
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDResources;
-import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
-import org.apache.pdfbox.pdmodel.graphics.optionalcontent.PDOptionalContentGroup;
-import org.apache.pdfbox.pdmodel.graphics.optionalcontent.PDOptionalContentProperties;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObjectForm;
-import org.apache.pdfbox.pdmodel.markedcontent.PDPropertyList;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.PDResources;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDRectangle;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDType1Font;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.optionalcontent.PDOptionalContentGroup;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.optionalcontent.PDOptionalContentProperties;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectForm;
+import org.apache.lapfdtextpdfbox.pdmodel.markedcontent.PDPropertyList;
+import org.apache.lapfdtextpdfbox.util.LayerUtility;
 
 /**
  * Tests the {@link LayerUtility} class.
@@ -46,7 +46,7 @@ import org.apache.pdfbox.pdmodel.markedcontent.PDPropertyList;
 public class TestLayerUtility extends TestCase
 {
 
-    private File testResultsDir = new File("target/test-output");
+	private final File testResultsDir = new File("target/test-output");
 
     /** {@inheritDoc} */
     @Override

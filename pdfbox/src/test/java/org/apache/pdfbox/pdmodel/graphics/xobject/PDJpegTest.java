@@ -16,7 +16,7 @@
 
 package org.apache.pdfbox.pdmodel.graphics.xobject;
 
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -25,20 +25,24 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+
 import javax.imageio.ImageIO;
+
 import junit.framework.TestCase;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.io.IOUtils;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray;
-import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
-import static org.apache.pdfbox.pdmodel.graphics.xobject.PDUtils.checkIdent;
-import static org.apache.pdfbox.pdmodel.graphics.xobject.PDUtils.colorCount;
-import static org.apache.pdfbox.pdmodel.graphics.xobject.PDUtils.createInterestingImage;
-import org.apache.pdfbox.util.ImageIOUtil;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.io.IOUtils;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDDeviceGray;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDDeviceRGB;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDJpeg;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObject;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectImage;
+import org.apache.lapfdtextpdfbox.util.ImageIOUtil;
+
+import static org.apache.pdfbox.pdmodel.graphics.xobject.PDUtils.*;
 import static org.junit.Assert.assertArrayEquals;
 
 /**
@@ -85,8 +89,8 @@ public class PDJpegTest extends TestCase
      * Tests RGB PDJpegTest() with color file
      *
      * @throws java.io.IOException
-     * @throws org.apache.pdfbox.exceptions.COSVisitorException
-     */
+	 * @throws COSVisitorException
+	 */
     public void testCreateJpegFromRGBImageFile() throws IOException, COSVisitorException
     {
         PDDocument document = new PDDocument();
@@ -120,8 +124,8 @@ public class PDJpegTest extends TestCase
      * Tests RGB PDJpegTest() with gray file
      *
      * @throws java.io.IOException
-     * @throws org.apache.pdfbox.exceptions.COSVisitorException
-     */
+	 * @throws COSVisitorException
+	 */
     public void testCreateJpegFromGrayImageFile() throws IOException, COSVisitorException
     {
         PDDocument document = new PDDocument();
@@ -177,8 +181,8 @@ public class PDJpegTest extends TestCase
      * Tests RGB PDJpegTest() with TYPE_4BYTE_ABGR image.
      *
      * @throws java.io.IOException
-     * @throws org.apache.pdfbox.exceptions.COSVisitorException
-     */
+	 * @throws COSVisitorException
+	 */
     public void testCreateJpeg4BYTE_ABGR() throws IOException, COSVisitorException
     {
         PDDocument document = new PDDocument();
@@ -217,8 +221,8 @@ public class PDJpegTest extends TestCase
      * Tests RGB PDJpegTest() with TYPE_INT_ARGB image.
      *
      * @throws java.io.IOException
-     * @throws org.apache.pdfbox.exceptions.COSVisitorException
-     */
+	 * @throws COSVisitorException
+	 */
     public void testCreateJpegINT_ARGB() throws IOException, COSVisitorException
     {
         PDDocument document = new PDDocument();
@@ -257,8 +261,8 @@ public class PDJpegTest extends TestCase
      * Tests RGB PDJpegTest() with TYPE_INT_RGB image.
      *
      * @throws java.io.IOException
-     * @throws org.apache.pdfbox.exceptions.COSVisitorException
-     */
+	 * @throws COSVisitorException
+	 */
     public void testCreateJpegINT_RGB() throws IOException, COSVisitorException
     {
         PDDocument document = new PDDocument();
@@ -288,8 +292,8 @@ public class PDJpegTest extends TestCase
      * Tests RGB PDJpegTest() with TYPE_INT_BGR image.
      *
      * @throws java.io.IOException
-     * @throws org.apache.pdfbox.exceptions.COSVisitorException
-     */
+	 * @throws COSVisitorException
+	 */
     public void testCreateJpegINT_BGR() throws IOException, COSVisitorException
     {
         PDDocument document = new PDDocument();
@@ -355,8 +359,8 @@ public class PDJpegTest extends TestCase
     private void checkJpegStream(PDDocument doc, InputStream resourceStream)
             throws IOException
     {
-        Map<String, PDXObject> xObjectMap = 
-                ((List<PDPage>) doc.getDocumentCatalog().getAllPages()).get(0).getResources().getXObjects();
+		Map<String, PDXObject> xObjectMap =
+				((List<PDPage>) doc.getDocumentCatalog().getAllPages()).get(0).getResources().getXObjects();
         PDXObjectImage ximage = (PDXObjectImage) xObjectMap.get("Im0");
         InputStream dctStream = ximage.getPDStream().getPartiallyFilteredStream(Arrays.asList(COSName.DCT_DECODE.getName()));
         ByteArrayOutputStream baos1 = new ByteArrayOutputStream();

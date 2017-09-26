@@ -18,8 +18,8 @@
 package org.apache.pdfbox.cos;
 
 import junit.framework.TestCase;
-
-import org.apache.pdfbox.filter.FilterManager;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.filter.FilterManager;
 
 /**
  * Test class for {@link COSBase}.

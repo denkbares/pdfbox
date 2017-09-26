@@ -21,7 +21,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache.pdfbox</groupId>
+	  <groupId>org.apache.lapdfpdfbox</groupId>
     <artifactId>pdfbox-parent</artifactId>
     <version>1.8.14-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>
@@ -72,7 +72,7 @@
             <Embed-Dependency>*;scope=provided;inline=org/apache/**|org/bouncycastle/**|com/ibm/icu/**</Embed-Dependency>
             <Bundle-DocURL>${project.url}</Bundle-DocURL>
             <Import-Package>!junit.framework,!junit.textui,javax.*;resolution:=optional,org.apache.avalon.framework.logger;resolution:=optional,org.apache.log;resolution:=optional,org.apache.log4j;resolution:=optional,*</Import-Package>
-            <Main-Class>org.apache.pdfbox.PDFBox</Main-Class>
+			  <Main-Class>org.apache.lapfdtextpdfbox.PDFBox</Main-Class>
           </instructions>
         </configuration>
       </plugin>

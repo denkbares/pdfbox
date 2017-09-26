@@ -20,6 +20,7 @@ package org.apache.pdfbox.io;
 import java.io.IOException;
 
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.io.RandomAccessBuffer;
 
 /**
  * This is a unit test for {@link RandomAccessBuffer}.

@@ -20,6 +20,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentInformation;
 
 /**
  * This class tests the extraction of document-level metadata.
@@ -45,10 +47,10 @@ public class TestPDDocumentInformation extends TestCase {
            assertNull  ("Wrong subject",              info.getSubject());
            assertNull  ("Wrong trapped",              info.getTrapped());
 
-           List<String> expectedMetadataKeys = Arrays.asList(new String[] {"CreationDate", "Author", "Creator",
-                                                                           "Producer", "ModDate", "Company",
-                                                                           "SourceModified", "Title"});
-           assertEquals("Wrong metadata key count", expectedMetadataKeys.size(),
+			List<String> expectedMetadataKeys = Arrays.asList("CreationDate", "Author", "Creator",
+					"Producer", "ModDate", "Company",
+					"SourceModified", "Title");
+			assertEquals("Wrong metadata key count", expectedMetadataKeys.size(),
                                                     info.getMetadataKeys().size());
            for (String key : expectedMetadataKeys) {
                assertTrue("Missing metadata key:" + key, info.getMetadataKeys().contains(key));

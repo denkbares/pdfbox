@@ -21,7 +21,7 @@
 
 package org.apache.pdfbox.preflight.font.container;
 
-import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
 
 /**
  * Because Type3 font program is an inner type of the PDF file, this font container is quite different from the other

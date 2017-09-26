@@ -20,11 +20,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import org.apache.pdfbox.cos.COSDocument;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-
-import org.apache.pdfbox.pdfwriter.COSWriter;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.pdfwriter.COSWriter;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
 
 /**
  * A simple class which has some methods used by all examples.

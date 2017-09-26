@@ -16,16 +16,15 @@
  */
 package org.apache.pdfbox.examples.util;
 
-import org.apache.pdfbox.pdfparser.PDFStreamParser;
-import org.apache.pdfbox.pdfwriter.ContentStreamWriter;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.common.PDStream;
-import org.apache.pdfbox.util.PDFOperator;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.lapfdtextpdfbox.pdfparser.PDFStreamParser;
+import org.apache.lapfdtextpdfbox.pdfwriter.ContentStreamWriter;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDStream;
+import org.apache.lapfdtextpdfbox.util.PDFOperator;
 
 /**
  * This is an example on how to remove all text from PDF document.

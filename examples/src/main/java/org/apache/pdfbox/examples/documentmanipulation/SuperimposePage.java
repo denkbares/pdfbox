@@ -18,14 +18,14 @@ package org.apache.pdfbox.examples.documentmanipulation;
 
 import java.awt.geom.AffineTransform;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDXObjectForm;
-import org.apache.pdfbox.util.LayerUtility;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDRectangle;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDType1Font;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectForm;
+import org.apache.lapfdtextpdfbox.util.LayerUtility;
 
 /**
  * Example to show superimposing a PDF page onto another PDF.
@@ -95,7 +95,7 @@ public class SuperimposePage
         }
         catch (Exception e)
         {
-            System.out.println(" error creating pdf file." + e.toString());
-        }
+			System.out.println(" error creating pdf file." + e);
+		}
     }
 }

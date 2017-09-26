@@ -20,20 +20,24 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
+
 import junit.framework.TestCase;
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.io.RandomAccess;
-import org.apache.pdfbox.io.RandomAccessFile;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.io.RandomAccess;
+import org.apache.lapfdtextpdfbox.io.RandomAccessFile;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDDeviceGray;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDCcitt;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectImage;
+
 import static org.apache.pdfbox.pdmodel.graphics.xobject.PDJpegTest.validate;
 import static org.apache.pdfbox.pdmodel.graphics.xobject.PDUtils.checkIdent;
-import static org.apache.pdfbox.pdmodel.graphics.xobject.PDUtils.doWritePDF;
 
 /**
  *

@@ -20,6 +20,7 @@
 package org.apache.pdfbox.io.ccitt;
 
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.io.ccitt.PackedBitArray;
 
 /**
  * Abstract base class for testing CCITT fax encoding.

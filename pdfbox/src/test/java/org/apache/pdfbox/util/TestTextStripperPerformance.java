@@ -17,8 +17,8 @@
 package org.apache.pdfbox.util;
 
 import java.io.File;
-import java.io.FilenameFilter;
 import java.io.FileOutputStream;
+import java.io.FilenameFilter;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -26,9 +26,8 @@ import java.io.Writer;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.util.PDFTextStripper;
 
 /**
  * Test the performance of the PDF text stripper utility.
@@ -51,8 +50,8 @@ public class TestTextStripperPerformance extends TestCase
     /**
      * Test suite setup.
      */
-    public void setUp()
-    {
+	@Override
+	public void setUp() {
     }
 
 

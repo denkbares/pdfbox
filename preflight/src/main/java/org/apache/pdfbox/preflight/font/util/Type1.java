@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.pdfbox.encoding.Encoding;
+import org.apache.lapfdtextpdfbox.encoding.Encoding;
 import org.apache.pdfbox.preflight.PreflightConstants;
 
 public class Type1
@@ -35,15 +35,15 @@ public class Type1
      * This map links the character identifier to a internal font program label which is different from the standard
      * Encoding
      */
-    private Map<Integer, String> cidToLabel = new HashMap<Integer, String>(0);
-    /**
+	private final Map<Integer, String> cidToLabel = new HashMap<Integer, String>(0);
+	/**
      * This map links the character label to a character identifier which is different from the standard Encoding.
      */
-    private Map<String, Integer> labelToCid = new HashMap<String, Integer>(0);
-    /**
+	private final Map<String, Integer> labelToCid = new HashMap<String, Integer>(0);
+	/**
      * This map link the character label to a container containing Glyph description.
      */
-    private Map<String, GlyphDescription> labelToMetric = new HashMap<String, GlyphDescription>(0);
+	private final Map<String, GlyphDescription> labelToMetric = new HashMap<String, GlyphDescription>(0);
 
     /**
      * The character encoding of the Font

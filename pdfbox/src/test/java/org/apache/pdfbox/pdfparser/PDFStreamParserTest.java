@@ -18,8 +18,11 @@ package org.apache.pdfbox.pdfparser;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
+
 import junit.framework.TestCase;
-import org.apache.pdfbox.util.PDFOperator;
+import org.apache.lapfdtextpdfbox.pdfparser.PDFStreamParser;
+import org.apache.lapfdtextpdfbox.util.PDFOperator;
+
 import static org.junit.Assert.assertArrayEquals;
 
 /**

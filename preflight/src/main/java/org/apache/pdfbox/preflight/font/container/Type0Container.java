@@ -23,7 +23,7 @@ package org.apache.pdfbox.preflight.font.container;
 
 import java.util.List;
 
-import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 
 public class Type0Container extends FontContainer
@@ -52,8 +52,8 @@ public class Type0Container extends FontContainer
         this.delegateFontContainer = delegateFontContainer;
     }
 
-    public List<ValidationError> getAllErrors()
-    {
+	@Override
+	public List<ValidationError> getAllErrors() {
         if (this.delegateFontContainer != null)
         {
             this.errorBuffer.addAll(this.delegateFontContainer.getAllErrors());
@@ -61,8 +61,8 @@ public class Type0Container extends FontContainer
         return this.errorBuffer;
     }
 
-    public boolean isValid()
-    {
+	@Override
+	public boolean isValid() {
         boolean result = (this.errorBuffer.isEmpty() && isEmbeddedFont());
         if (this.delegateFontContainer != null)
         {
@@ -71,8 +71,8 @@ public class Type0Container extends FontContainer
         return result;
     }
 
-    public boolean isEmbeddedFont()
-    {
+	@Override
+	public boolean isEmbeddedFont() {
         boolean result = embeddedFont;
         if (this.delegateFontContainer != null)
         {

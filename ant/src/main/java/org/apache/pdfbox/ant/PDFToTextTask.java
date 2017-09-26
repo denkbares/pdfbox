@@ -17,14 +17,13 @@
 package org.apache.pdfbox.ant;
 
 import java.io.File;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.lapfdtextpdfbox.ExtractText;
 import org.apache.tools.ant.DirectoryScanner;
 import org.apache.tools.ant.Task;
-
 import org.apache.tools.ant.types.FileSet;
 
 /**
@@ -36,7 +35,7 @@ import org.apache.tools.ant.types.FileSet;
  */
 public class PDFToTextTask extends Task
 {
-    private List fileSets = new ArrayList();
+	private final List fileSets = new ArrayList();
 
     /**
      * Adds a set of files (nested fileset attribute).
@@ -51,8 +50,8 @@ public class PDFToTextTask extends Task
     /**
      * This will perform the execution.
      */
-    public void execute()
-    {
+	@Override
+	public void execute() {
         log( "PDFToTextTask executing" );
         Iterator fileSetIter = fileSets.iterator();
         while( fileSetIter.hasNext() )
@@ -72,8 +71,8 @@ public class PDFToTextTask extends Task
                     textFile = textFile + "txt";
                     try
                     {
-                        org.apache.pdfbox.ExtractText.main( new String[] { pdfFile, textFile } );
-                    }
+						ExtractText.main(new String[] { pdfFile, textFile });
+					}
                     catch( Exception e )
                     {
                         log( "Error processing " + pdfFile + e.getMessage() );

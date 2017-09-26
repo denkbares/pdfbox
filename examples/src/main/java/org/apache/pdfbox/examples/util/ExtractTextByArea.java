@@ -16,14 +16,12 @@
  */
 package org.apache.pdfbox.examples.util;
 
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.util.PDFTextStripperByArea;
-
-import java.awt.Rectangle;
-
+import java.awt.*;
 import java.util.List;
+
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.util.PDFTextStripperByArea;
 
 /**
  * This is an example on how to extract text from a specific area on the PDF document.

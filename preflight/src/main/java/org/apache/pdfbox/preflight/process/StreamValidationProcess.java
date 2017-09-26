@@ -21,30 +21,26 @@
 
 package org.apache.pdfbox.preflight.process;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_STREAM_DAMAGED;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_STREAM_FX_KEYS;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_STREAM_INVALID_FILTER;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_STREAM_LENGTH_INVALID;
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_STREAM_LENGTH_MISSING;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSObject;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.persistence.util.COSObjectKey;
+import org.apache.lapfdtextpdfbox.cos.COSArray;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSObject;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.persistence.util.COSObjectKey;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.ValidationException;
 import org.apache.pdfbox.preflight.utils.COSUtils;
 import org.apache.pdfbox.preflight.utils.FilterHelper;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 public class StreamValidationProcess extends AbstractProcess
 {
@@ -227,8 +223,8 @@ public class StreamValidationProcess extends AbstractProcess
                     long curSkip = ra.skip(offset - skipped);
                     if (curSkip < 0)
                     {
-                        org.apache.pdfbox.io.IOUtils.closeQuietly(ra);
-                        addValidationError(context, new ValidationError(ERROR_SYNTAX_STREAM_DAMAGED, "Unable to skip bytes in the PDFFile to check stream length"));
+						org.apache.lapfdtextpdfbox.io.IOUtils.closeQuietly(ra);
+						addValidationError(context, new ValidationError(ERROR_SYNTAX_STREAM_DAMAGED, "Unable to skip bytes in the PDFFile to check stream length"));
                         return;
                     }
                     skipped += curSkip;
@@ -264,8 +260,8 @@ public class StreamValidationProcess extends AbstractProcess
                         {
                             addValidationError(context, new ValidationError(ERROR_SYNTAX_STREAM_LENGTH_INVALID,
                                     "Stream length is invalid"));
-                            org.apache.pdfbox.io.IOUtils.closeQuietly(ra);
-                            return;
+							org.apache.lapfdtextpdfbox.io.IOUtils.closeQuietly(ra);
+							return;
                         }
                         else
                         {

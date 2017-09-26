@@ -17,8 +17,10 @@
 package org.apache.pdfbox.util;
 
 import java.io.IOException;
-import junit.framework.*;
-import org.apache.pdfbox.pdmodel.PDDocument;
+
+import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.util.PageExtractor;
 
 /**
  * Test suite for PageExtractor.
@@ -35,21 +37,23 @@ public class PageExtractorTest extends TestCase {
         super(testName);
     }
 
-    protected void setUp() throws Exception {
-    }
+	@Override
+	protected void setUp() throws Exception {
+	}
 
-    protected void tearDown() throws Exception {
-    }
+	@Override
+	protected void tearDown() throws Exception {
+	}
 
     private void closeDoc(PDDocument doc) {
         if(doc != null) {
             try {
                 doc.close(); 
             } catch(Exception e) {
-                /* Can't do much about this... */ 
-            };
-        }
-    }
+                /* Can't do much about this... */
+			}
+		}
+	}
     
     /**
      * Test of extract method, of class org.apache.pdfbox.util.PageExtractor.

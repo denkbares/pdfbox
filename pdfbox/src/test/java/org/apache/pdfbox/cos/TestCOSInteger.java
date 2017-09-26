@@ -22,8 +22,9 @@ import java.io.OutputStream;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
-import org.apache.pdfbox.pdfwriter.COSWriter;
+import org.apache.lapfdtextpdfbox.cos.COSInteger;
+import org.apache.lapfdtextpdfbox.cos.COSNumber;
+import org.apache.lapfdtextpdfbox.pdfwriter.COSWriter;
 
 /**
  * A test case for COSInteger
@@ -32,8 +33,8 @@ import org.apache.pdfbox.pdfwriter.COSWriter;
  */
 public class TestCOSInteger extends TestCOSNumber
 {
-    public void setUp()
-    {
+	@Override
+	public void setUp() {
         try
         {
             testCOSBase = COSNumber.get("0");

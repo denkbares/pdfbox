@@ -28,8 +28,8 @@ import java.util.List;
 import org.apache.fontbox.ttf.CMAPEncodingEntry;
 import org.apache.fontbox.ttf.CMAPTable;
 import org.apache.fontbox.ttf.TrueTypeFont;
-import org.apache.pdfbox.encoding.Encoding;
-import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.encoding.Encoding;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
 
 public class TrueTypeContainer extends FontContainer
 {

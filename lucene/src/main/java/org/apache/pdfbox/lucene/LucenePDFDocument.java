@@ -18,28 +18,23 @@ package org.apache.pdfbox.lucene;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.util.Calendar;
-
 import java.net.URL;
 import java.net.URLConnection;
-
+import java.util.Calendar;
 import java.util.Date;
 
+import org.apache.lapfdtextpdfbox.exceptions.CryptographyException;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentInformation;
+import org.apache.lapfdtextpdfbox.util.PDFTextStripper;
 import org.apache.lucene.document.DateTools;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentInformation;
-
-import org.apache.pdfbox.exceptions.CryptographyException;
-
-import org.apache.pdfbox.util.PDFTextStripper;
 
 /**
  * This class is used to create a document for the lucene search engine.

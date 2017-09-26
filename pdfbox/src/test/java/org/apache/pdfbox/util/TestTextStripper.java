@@ -19,8 +19,8 @@ package org.apache.pdfbox.util;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FilenameFilter;
 import java.io.FileOutputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
@@ -31,14 +31,14 @@ import java.io.Writer;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.documentnavigation.outline.PDDocumentOutline;
+import org.apache.lapfdtextpdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem;
+import org.apache.lapfdtextpdfbox.util.PDFTextStripper;
 import org.apache.pdfbox.pdmodel.TestPDDocumentCatalog;
-import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination;
-import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDDocumentOutline;
-import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem;
 
 
 /**
@@ -119,8 +119,8 @@ public class TestTextStripper extends TestCase
     /**
      * Test suite setup.
      */
-    public void setUp()
-    {
+	@Override
+	public void setUp() {
         // If you want to test a single file using DEBUG logging, from an IDE,
         // you can do something like this:
         //
@@ -143,55 +143,44 @@ public class TestTextStripper extends TestCase
         {
             return true;
         }
-        else if( expected != null && actual != null )
-        {
-            expected = expected.trim();
-            actual = actual.trim();
-            char[] expectedArray = expected.toCharArray();
-            char[] actualArray = actual.toCharArray();
-            int expectedIndex = 0;
-            int actualIndex = 0;
-            while( expectedIndex<expectedArray.length && actualIndex<actualArray.length )
-            {
-                if( expectedArray[expectedIndex] != actualArray[actualIndex] )
-                {
-                    equals = false;
-                    log.warn("Lines differ at index"
-                     + " expected:" + expectedIndex + "-" + (int)expectedArray[expectedIndex]
-                     + " actual:" + actualIndex + "-" + (int)actualArray[actualIndex] );
-                    break;
-                }
-                expectedIndex = skipWhitespace( expectedArray, expectedIndex );
-                actualIndex = skipWhitespace( actualArray, actualIndex );
-                expectedIndex++;
-                actualIndex++;
-            }
-            if( equals )
-            {
-                if( expectedIndex != expectedArray.length )
-                {
-                    equals = false;
-                    log.warn("Expected line is longer at:" + expectedIndex );
-                }
-                if( actualIndex != actualArray.length )
-                {
-                    equals = false;
-                    log.warn("Actual line is longer at:" + actualIndex );
-                }
-            }
-        }
-        else if( ( expected == null && actual != null && actual.trim().equals( "" ) ) ||
-            ( actual == null && expected != null && expected.trim().equals( "" ) ) )
-        {
-            //basically there are some cases where pdfbox will put an extra line
-            //at the end of the file, who cares, this is not enough to report
-            // a failure
-            equals = true;
-        }
-        else
-        {
-            equals = false;
-        }
+        else if (expected != null && actual != null) {
+			expected = expected.trim();
+			actual = actual.trim();
+			char[] expectedArray = expected.toCharArray();
+			char[] actualArray = actual.toCharArray();
+			int expectedIndex = 0;
+			int actualIndex = 0;
+			while (expectedIndex < expectedArray.length && actualIndex < actualArray.length) {
+				if (expectedArray[expectedIndex] != actualArray[actualIndex]) {
+					equals = false;
+					log.warn("Lines differ at index"
+							+ " expected:" + expectedIndex + "-" + (int) expectedArray[expectedIndex]
+							+ " actual:" + actualIndex + "-" + (int) actualArray[actualIndex]);
+					break;
+				}
+				expectedIndex = skipWhitespace(expectedArray, expectedIndex);
+				actualIndex = skipWhitespace(actualArray, actualIndex);
+				expectedIndex++;
+				actualIndex++;
+			}
+			if (equals) {
+				if (expectedIndex != expectedArray.length) {
+					equals = false;
+					log.warn("Expected line is longer at:" + expectedIndex);
+				}
+				if (actualIndex != actualArray.length) {
+					equals = false;
+					log.warn("Actual line is longer at:" + actualIndex);
+				}
+			}
+		}
+		else //basically there are some cases where pdfbox will put an extra line
+//at the end of the file, who cares, this is not enough to report
+// a failure
+		{
+			equals = (expected == null && actual != null && actual.trim().equals("")) ||
+					(actual == null && expected != null && expected.trim().equals(""));
+		}
         return equals;
     }
 

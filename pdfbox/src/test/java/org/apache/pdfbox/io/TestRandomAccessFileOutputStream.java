@@ -19,11 +19,12 @@ package org.apache.pdfbox.io;
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.pdfbox.cos.COSInteger;
-import org.apache.pdfbox.cos.COSObject;
-import org.apache.pdfbox.cos.COSString;
-
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.cos.COSInteger;
+import org.apache.lapfdtextpdfbox.cos.COSObject;
+import org.apache.lapfdtextpdfbox.cos.COSString;
+import org.apache.lapfdtextpdfbox.io.RandomAccessFile;
+import org.apache.lapfdtextpdfbox.io.RandomAccessFileOutputStream;
 
 /**
  * This is a unit test for RandomAccessFileOutputStream.

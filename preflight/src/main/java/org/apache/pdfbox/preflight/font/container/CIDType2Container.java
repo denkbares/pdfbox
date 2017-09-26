@@ -22,7 +22,7 @@
 package org.apache.pdfbox.preflight.font.container;
 
 import org.apache.fontbox.ttf.TrueTypeFont;
-import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.preflight.font.util.CIDToGIDMap;
 
 public class CIDType2Container extends FontContainer

@@ -21,8 +21,8 @@
 
 package org.apache.pdfbox.preflight.font;
 
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.font.container.CIDType2Container;
 import org.apache.pdfbox.preflight.font.descriptor.CIDType2DescriptorHelper;

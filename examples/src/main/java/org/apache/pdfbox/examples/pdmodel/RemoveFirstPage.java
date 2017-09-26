@@ -16,9 +16,9 @@
  */
 package org.apache.pdfbox.examples.pdmodel;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-
 import java.io.IOException;
+
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
 
 /**
  * This is an example on how to remove pages from a PDF document.

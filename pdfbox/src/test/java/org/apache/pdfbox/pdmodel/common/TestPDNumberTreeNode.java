@@ -24,9 +24,11 @@ import java.util.TreeMap;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
-
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSInteger;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSInteger;
+import org.apache.lapfdtextpdfbox.pdmodel.common.COSArrayList;
+import org.apache.lapfdtextpdfbox.pdmodel.common.COSObjectable;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDNumberTreeNode;
 
 /**
  * A test case for PDNumberTreeNode.
@@ -44,7 +46,7 @@ public class TestPDNumberTreeNode extends TestCase
     private PDNumberTreeNode node24;
     
     public static class PDTest implements COSObjectable {
-        private int value;
+		private final int value;
 
         public PDTest(int value) {
             this.value = value;
@@ -78,11 +80,9 @@ public class TestPDNumberTreeNode extends TestCase
             if ( getClass() != obj.getClass())
                 return false;
             PDTest other = (PDTest) obj;
-            if ( value != other.value)
-                return false;
-            return true;
-        }
-    }
+			return value == other.value;
+		}
+	}
 
     @Override
     protected void setUp() throws Exception

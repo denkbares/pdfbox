@@ -23,9 +23,10 @@ import java.util.Arrays;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.pdfwriter.COSWriter;
+import org.apache.lapfdtextpdfbox.cos.COSString;
+import org.apache.lapfdtextpdfbox.cos.ICOSVisitor;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.pdfwriter.COSWriter;
 
 /**
  * This will test all of the filters in the PDFBox system.

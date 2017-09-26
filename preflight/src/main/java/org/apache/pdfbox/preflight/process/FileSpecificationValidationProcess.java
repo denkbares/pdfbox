@@ -21,22 +21,20 @@
 
 package org.apache.pdfbox.preflight.process;
 
-import static org.apache.pdfbox.preflight.PreflightConstants.ERROR_SYNTAX_EMBEDDED_FILES;
-import static org.apache.pdfbox.preflight.PreflightConstants.FILE_SPECIFICATION_KEY_EMBEDDED_FILE;
-import static org.apache.pdfbox.preflight.PreflightConstants.FILE_SPECIFICATION_VALUE_TYPE;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.cos.COSDictionary;
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.cos.COSObject;
-import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.cos.COSDictionary;
+import org.apache.lapfdtextpdfbox.cos.COSDocument;
+import org.apache.lapfdtextpdfbox.cos.COSName;
+import org.apache.lapfdtextpdfbox.cos.COSObject;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.exception.ValidationException;
+
+import static org.apache.pdfbox.preflight.PreflightConstants.*;
 
 /**
  * 

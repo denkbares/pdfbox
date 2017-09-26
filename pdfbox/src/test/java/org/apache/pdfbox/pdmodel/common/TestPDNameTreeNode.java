@@ -21,10 +21,12 @@ import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import org.apache.pdfbox.cos.COSInteger;
-
 import junit.framework.Assert;
 import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.cos.COSInteger;
+import org.apache.lapfdtextpdfbox.pdmodel.common.COSArrayList;
+import org.apache.lapfdtextpdfbox.pdmodel.common.COSObjectable;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDNameTreeNode;
 
 /**
  * A test case for PDNameTreeNode.

@@ -21,7 +21,7 @@
 
 package org.apache.pdfbox.preflight.xobject;
 
-import org.apache.pdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.exception.ValidationException;
 

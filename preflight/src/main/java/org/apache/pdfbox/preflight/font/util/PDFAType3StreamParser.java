@@ -21,21 +21,21 @@
 
 package org.apache.pdfbox.preflight.font.util;
 
-import java.awt.Image;
+import java.awt.*;
 import java.io.IOException;
 import java.util.List;
 
 import org.apache.fontbox.util.BoundingBox;
-import org.apache.pdfbox.cos.COSFloat;
-import org.apache.pdfbox.cos.COSInteger;
-import org.apache.pdfbox.cos.COSNumber;
-import org.apache.pdfbox.cos.COSStream;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.graphics.xobject.PDInlinedImage;
+import org.apache.lapfdtextpdfbox.cos.COSFloat;
+import org.apache.lapfdtextpdfbox.cos.COSInteger;
+import org.apache.lapfdtextpdfbox.cos.COSNumber;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDInlinedImage;
+import org.apache.lapfdtextpdfbox.util.ImageParameters;
+import org.apache.lapfdtextpdfbox.util.PDFOperator;
 import org.apache.pdfbox.preflight.PreflightContext;
 import org.apache.pdfbox.preflight.content.ContentStreamEngine;
-import org.apache.pdfbox.util.ImageParameters;
-import org.apache.pdfbox.util.PDFOperator;
 
 /**
  * This class is used to parse a glyph of a Type3 font program. If the glyph is parsed without error, the width of the
@@ -83,8 +83,8 @@ public class PDFAType3StreamParser extends ContentStreamEngine
      * @throws IOException
      *             If there is an error processing the operation.
      */
-    protected void processOperator(PDFOperator operator, List arguments) throws IOException
-    {
+	@Override
+	protected void processOperator(PDFOperator operator, List arguments) throws IOException {
         super.processOperator(operator, arguments);
         String operation = operator.getOperation();
 

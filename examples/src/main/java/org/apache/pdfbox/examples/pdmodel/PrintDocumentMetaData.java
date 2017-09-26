@@ -16,20 +16,16 @@
  */
 package org.apache.pdfbox.examples.pdmodel;
 
-
-import org.apache.pdfbox.pdfparser.PDFParser;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
-import org.apache.pdfbox.pdmodel.PDDocumentInformation;
-import org.apache.pdfbox.pdmodel.common.PDMetadata;
-
 import java.io.FileInputStream;
 import java.io.IOException;
-
 import java.text.SimpleDateFormat;
-
 import java.util.Calendar;
+
+import org.apache.lapfdtextpdfbox.pdfparser.PDFParser;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentInformation;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDMetadata;
 
 /**
  * This is an example on how to get a documents metadata information.

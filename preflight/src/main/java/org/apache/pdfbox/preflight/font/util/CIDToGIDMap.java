@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.pdfbox.cos.COSStream;
+import org.apache.lapfdtextpdfbox.cos.COSStream;
 
 public class CIDToGIDMap
 {

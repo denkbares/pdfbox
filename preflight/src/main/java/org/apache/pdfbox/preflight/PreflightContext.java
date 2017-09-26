@@ -28,8 +28,8 @@ import java.util.Map;
 
 import javax.activation.DataSource;
 
-import org.apache.pdfbox.cos.COSBase;
-import org.apache.pdfbox.pdfparser.XrefTrailerResolver;
+import org.apache.lapfdtextpdfbox.cos.COSBase;
+import org.apache.lapfdtextpdfbox.pdfparser.XrefTrailerResolver;
 import org.apache.pdfbox.preflight.ValidationResult.ValidationError;
 import org.apache.pdfbox.preflight.font.container.FontContainer;
 import org.apache.pdfbox.preflight.graphic.ICCProfileWrapper;

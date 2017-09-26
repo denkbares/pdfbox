@@ -15,28 +15,28 @@
  */
 package org.apache.pdfbox.pdmodel.graphics.xobject;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.GraphicsConfiguration;
-import java.awt.Transparency;
+import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Random;
+
 import javax.imageio.ImageIO;
-import static junit.framework.Assert.assertTrue;
+
 import junit.framework.TestCase;
-import org.apache.pdfbox.exceptions.COSVisitorException;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceGray;
-import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
+import org.apache.lapfdtextpdfbox.exceptions.COSVisitorException;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDPage;
+import org.apache.lapfdtextpdfbox.pdmodel.edit.PDPageContentStream;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDDeviceGray;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDDeviceRGB;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDPixelMap;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.xobject.PDXObjectImage;
+import org.apache.lapfdtextpdfbox.util.ImageIOUtil;
+
 import static org.apache.pdfbox.pdmodel.graphics.xobject.PDUtils.colorCount;
-import org.apache.pdfbox.util.ImageIOUtil;
 
 /**
  *
@@ -138,8 +138,8 @@ public class PDPixelMapTest extends TestCase
      * Tests RGB PDPixelMapTest() with TYPE_4BYTE_ABGR image.
      *
      * @throws java.io.IOException
-     * @throws org.apache.pdfbox.exceptions.COSVisitorException
-     */
+	 * @throws COSVisitorException
+	 */
     public void testCreateLossless4BYTE_ABGR() throws IOException, COSVisitorException
     {
         PDDocument document = new PDDocument();
@@ -181,8 +181,8 @@ public class PDPixelMapTest extends TestCase
      * Tests RGB PDPixelMapTest() with TYPE_INT_ARGB image.
      *
      * @throws java.io.IOException
-     * @throws org.apache.pdfbox.exceptions.COSVisitorException
-     */
+	 * @throws COSVisitorException
+	 */
     public void testCreateLosslessINT_ARGB() throws IOException, COSVisitorException
     {
         PDDocument document = new PDDocument();
@@ -224,8 +224,8 @@ public class PDPixelMapTest extends TestCase
      * Tests RGB PDPixelMapTest() with TYPE_INT_RGB image.
      *
      * @throws java.io.IOException
-     * @throws org.apache.pdfbox.exceptions.COSVisitorException
-     */
+	 * @throws COSVisitorException
+	 */
     public void testCreateLosslessINT_RGB() throws IOException, COSVisitorException
     {
         PDDocument document = new PDDocument();
@@ -265,8 +265,8 @@ public class PDPixelMapTest extends TestCase
      * Tests RGB PDPixelMapTest() with TYPE_INT_BGR image.
      *
      * @throws java.io.IOException
-     * @throws org.apache.pdfbox.exceptions.COSVisitorException
-     */
+	 * @throws COSVisitorException
+	 */
     public void testCreateLosslessINT_BGR() throws IOException, COSVisitorException
     {
         PDDocument document = new PDDocument();

@@ -16,21 +16,22 @@
  */
 package org.apache.pdfbox.examples.pdmodel;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
-import org.apache.pdfbox.pdmodel.PDDocumentInformation;
-import org.apache.pdfbox.pdmodel.common.PDMetadata;
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.lapfdtextpdfbox.exceptions.CryptographyException;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentCatalog;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocumentInformation;
+import org.apache.lapfdtextpdfbox.pdmodel.common.PDMetadata;
 import org.apache.xmpbox.XMPMetadata;
 import org.apache.xmpbox.schema.AdobePDFSchema;
 import org.apache.xmpbox.schema.DublinCoreSchema;
 import org.apache.xmpbox.schema.XMPBasicSchema;
 import org.apache.xmpbox.xml.DomXmpParser;
 import org.apache.xmpbox.xml.XmpParsingException;
-
-import java.text.DateFormat;
-import java.util.Calendar;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * This is an example on how to extract metadata from a PDF document.
@@ -73,8 +74,7 @@ public class ExtractMetadata
                     {
                         document.decrypt("");
                     }
-                    catch( org.apache.pdfbox.exceptions.CryptographyException e )
-                    {
+					catch (CryptographyException e) {
                         e.printStackTrace();
                     }
                 }

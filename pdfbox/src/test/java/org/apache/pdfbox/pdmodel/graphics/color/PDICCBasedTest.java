@@ -17,11 +17,12 @@ package org.apache.pdfbox.pdmodel.graphics.color;
 
 import java.awt.color.ColorSpace;
 import java.io.IOException;
-import junit.framework.Assert;
-import static junit.framework.Assert.assertFalse;
-import junit.framework.TestCase;
-import org.apache.pdfbox.pdmodel.PDDocument;
 
+import junit.framework.Assert;
+import junit.framework.TestCase;
+import org.apache.lapfdtextpdfbox.pdmodel.PDDocument;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDColorSpaceFactory;
+import org.apache.lapfdtextpdfbox.pdmodel.graphics.color.PDICCBased;
 
 /**
  *

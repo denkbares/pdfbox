@@ -25,8 +25,9 @@ import java.util.Random;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
-import org.apache.pdfbox.pdfwriter.COSWriter;
+import org.apache.lapfdtextpdfbox.cos.COSFloat;
+import org.apache.lapfdtextpdfbox.cos.COSNumber;
+import org.apache.lapfdtextpdfbox.pdfwriter.COSWriter;
 
 /**
  * Tests {@link COSFloat}.
@@ -36,8 +37,8 @@ public class TestCOSFloat extends TestCOSNumber
     // Use random number to ensure various float values are expressed in the test
     private Random rnd;
 
-    public void setUp()
-    {
+	@Override
+	public void setUp() {
         rnd = new Random();
         try
         {
